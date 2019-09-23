@@ -1,0 +1,37 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "ie 11"
+          ]
+        }
+      }
+    ],
+    [
+      "@babel/preset-react"
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-transform-classes",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-runtime",
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        ["react-remove-properties", {"properties": ["data-testid"]}]
+      ]
+    }
+  }
+}

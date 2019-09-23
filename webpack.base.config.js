@@ -3,6 +3,7 @@ const path = require('path');
 // 這邊使用 HtmlWebpackPlugin，將 bundle 好的 <script> 插入到 body。${__dirname} 為 ES6 語法對應到 __dirname
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     // 檔案起始點從 entry 進入，因為是陣列所以也可以是多個檔案
@@ -52,6 +53,12 @@ module.exports = {
             template: `${__dirname}/index.html`,
             filename: 'index.html',
             inject: 'body'
+        }),
+        new WorkboxPlugin.GenerateSW({
+            // 这些选项帮助快速启用 ServiceWorkers
+            // 不允许遗留任何“旧的” ServiceWorkers
+            clientsClaim: true,
+            skipWaiting: true
         })
     ],
     resolve: {
