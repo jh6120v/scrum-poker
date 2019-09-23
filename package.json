@@ -4,6 +4,10 @@
   "main": "main.js",
   "author": "James Yu",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jh6120v/scrum-poker"
+  },
   "dependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
