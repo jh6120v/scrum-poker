@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test utils rendered lazily fallback 1`] = `
+<div>
+  <div>
+    載入中...
+  </div>
+</div>
+`;

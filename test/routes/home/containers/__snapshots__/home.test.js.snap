@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test <Home /> <Home /> snapshot 1`] = `
+<div
+  class="sc-bdVaJa jggxrB"
+>
+  <div
+    class="sc-bwzfXH bUbcxt"
+  />
+  <div
+    class="sc-bxivhb kgXhAB"
+  />
+  <div
+    class="sc-bwzfXH bUbcxt"
+  />
+  <h1
+    class="sc-htpNat jUnqYe"
+    data-testid="display_title"
+  >
+    Welcome to React-Redux-App!
+  </h1>
+</div>
+`;
