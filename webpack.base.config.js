@@ -4,6 +4,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const SwRegisterWebpackPlugin = require('sw-register-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     // 檔案起始點從 entry 進入，因為是陣列所以也可以是多個檔案
@@ -12,7 +14,7 @@ module.exports = {
     ],
     // output 是放入產生出來的結果的相關參數
     output: {
-        path: `${__dirname}/dist`,
+        path: `${__dirname}/docs`,
         filename: 'assets/js/bundle.[hash].js',
         publicPath: '/'
     },
@@ -46,7 +48,7 @@ module.exports = {
     // plugins 放置所使用的外掛
     plugins: [
         new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: [`${__dirname}/dist`],
+            cleanOnceBeforeBuildPatterns: [`${__dirname}/docs`],
             verbose: true,
         }),
         new HtmlWebpackPlugin({
@@ -55,11 +57,21 @@ module.exports = {
             inject: 'body'
         }),
         new WorkboxPlugin.GenerateSW({
-            // 这些选项帮助快速启用 ServiceWorkers
-            // 不允许遗留任何“旧的” ServiceWorkers
-            clientsClaim: true,
-            skipWaiting: true
-        })
+            swDest: `service-worker.js?${Date.now()}`, // 輸出 Service worker 文件,
+            cacheId: 'scrum-poker-pwa', // 設置前綴
+            skipWaiting: true, // 強制等待中的 Service Worker 被激活
+            clientsClaim: true, // Service Worker 被激活後使其立即獲得頁面控制權
+            cleanupOutdatedCaches: true
+        }),
+        new SwRegisterWebpackPlugin({
+            output: 'sw-register.js'
+        }),
+        new CopyPlugin([
+            { from: './manifest.json', to: './manifest.json' },
+            { from: './favicon.ico', to: './favicon.ico' },
+            { from: 'src/assets/icons', to: './assets/icons' },
+            { from: 'src/assets/splash', to: './assets/splash' }
+        ])
     ],
     resolve: {
         extensions: ['.js', 'jsx'],

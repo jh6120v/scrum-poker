@@ -7,6 +7,8 @@ module.exports = merge(config, {
         minimize: true,
         minimizer: [
             new TerserPlugin({
+                test: /\.js(\?.*)?$/i,
+                sourceMap: true,
                 terserOptions: {
                     warnings: false,
                     compress: {
@@ -19,6 +21,7 @@ module.exports = merge(config, {
             }),
         ]
     },
+    plugins: [],
     performance: {
         hints: false
     },
