@@ -38,6 +38,7 @@ module.exports = merge(config, {
         new CopyPlugin([
             { from: './manifest.json', to: './manifest.json' },
             { from: './favicon.ico', to: './favicon.ico' },
+            { from: './CNAME', to: './CNAME' },
             { from: 'src/assets/icons', to: './assets/icons' },
             { from: 'src/assets/splash', to: './assets/splash' }
         ])
