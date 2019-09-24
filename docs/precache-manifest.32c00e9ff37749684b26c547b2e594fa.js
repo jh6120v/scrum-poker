@@ -12,9 +12,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/js/2.bundle.03bcf883399c0093ebed.js"
   },
   {
-    "url": "/assets/js/2.bundle.03bcf883399c0093ebed.js.LICENSE"
-  },
-  {
     "url": "/assets/js/3.bundle.03bcf883399c0093ebed.js"
   },
   {
