@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.6b36d9f500685f077cac7219d083389c.js"
+  "/precache-manifest.4d9e8d1100411c19ce00e3b4e71ef362.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "scrum-poker-pwa"});
@@ -32,3 +32,5 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.precaching.cleanupOutdatedCaches();
+
+workbox.routing.registerRoute(/^https:\/\/my-json-server.typicode\.com\//, new workbox.strategies.NetworkFirst({ "cacheName":"cached-api","networkTimeoutSeconds":2, plugins: [new workbox.expiration.Plugin({ maxEntries: 50, maxAgeSeconds: 86400, purgeOnQuotaError: false }), new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');

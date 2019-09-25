@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import LazyLoad from '../components/lazy-load';
 
 export const createActionCreator = (namespace) => (actionType) => {
     const type = `${namespace}/${actionType}`;
@@ -14,7 +15,7 @@ export const createActionCreator = (namespace) => (actionType) => {
 };
 
 export const waitingRouteComponent = (Component) => () => (
-    <Suspense fallback={<div>載入中...</div>}>
+    <Suspense fallback={<LazyLoad />}>
         <Component />
     </Suspense>
 );
