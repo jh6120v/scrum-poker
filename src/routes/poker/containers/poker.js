@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { pointListDataFetch } from '../modules/point-list';
 
 const Wrapper = styled.div`
@@ -54,19 +54,47 @@ const Footer = styled.footer`
   font-size: 14px;
 `;
 
+const PokerWrap = styled.div`
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const PokerItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  width: 30%;
+  height: 120px;
+  border: 2px solid #fff;
+  border-radius: 7px;
+  padding: 15px;
+  margin-bottom: 10px;
+`;
+
 const Poker = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
         // componentDidMount
         dispatch(pointListDataFetch());
-    }, [dispatch]);
+    }, []);
 
+    const { listData } = useSelector((state) => state.pointList);
+
+    console.log(listData);
     return (
         <Wrapper>
             <Header data-testid="display_header">Scrum Poker</Header>
             <Container>
-                123
+                <PokerWrap>
+                    {
+                        listData.map((val) => <PokerItem key={val.point}>{ val.point === 'coffee' ? '☕' : val.point }</PokerItem>)
+                    }
+                </PokerWrap>
             </Container>
             <Footer>此網頁僅供測試用</Footer>
         </Wrapper>

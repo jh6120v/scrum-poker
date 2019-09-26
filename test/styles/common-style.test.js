@@ -1,16 +1,16 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { LazyLoadWrap } from '../../src/styles/common-style';
+import { SpinnerWrap } from '../../src/styles/common-style';
 
 describe('test common-style style.', () => {
-    it('<LazyLoadWrap> snapshot.', () => {
-        const { container } = render(<LazyLoadWrap />);
+    it('<SpinnerWrap> snapshot.', () => {
+        const { container } = render(<SpinnerWrap />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('test <LazyLoadWrap> style when render it.', () => {
-        const { container } = render(<LazyLoadWrap />);
+    it('test <SpinnerWrap> style when render it.', () => {
+        const { container } = render(<SpinnerWrap />);
         const tree = container.firstChild;
 
         expect(tree).toHaveStyleRule('width', '100vw');

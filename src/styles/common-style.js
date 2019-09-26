@@ -14,12 +14,16 @@ const ballScaleMultipleAnimation = keyframes`
   }
 `;
 
-const LazyLoadWrap = styled.div`
+const SpinnerWrap = styled.div`
+  display: flex;
   width: 100vw;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  opacity: ${(props) => (props.show ? '1' : '0')};
+  visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+  transition: all .5s ease-in-out;
 `;
 
 const BallScaleMultiple = styled.div`
@@ -46,7 +50,19 @@ const BallScaleMultiple = styled.div`
   }
 `;
 
+const LazyLoad = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export {
-    LazyLoadWrap,
-    BallScaleMultiple
+    SpinnerWrap,
+    BallScaleMultiple,
+    LazyLoad
 };
