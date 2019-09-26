@@ -10,11 +10,11 @@ const renderWithRedux = (ui, { initialState, store = ConfigureStore(initialState
 });
 
 describe('test <App />', () => {
-    it('直接 render', async () => {
+    it('render direct.', async () => {
         const { getByTestId, } = renderWithRedux(<App />);
 
-        const lazyElement = await waitForElement(() => getByTestId('display_title'));
+        const lazyElement = await waitForElement(() => getByTestId('display_header'));
 
-        expect(lazyElement.textContent).toBe('Welcome to React-Redux-App!');
+        expect(lazyElement.textContent).toBe('Scrum Poker');
     });
 });

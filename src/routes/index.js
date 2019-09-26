@@ -16,7 +16,6 @@ const Routes = withRouter(({ location, history }) => {
 
     return (
         <TransitionGroup
-            className="route-container"
             childFactory={(child) => React.cloneElement(child, { classNames })}
         >
             <CSSTransition

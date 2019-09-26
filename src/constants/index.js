@@ -1,0 +1,1 @@
+export const POINT_LIST_DATA = 'POINT_LIST_DATA';
