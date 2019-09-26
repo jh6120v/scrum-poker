@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test <Poker /> test <Poker /> snapshot 1`] = `
+<div
+  class="sc-bdVaJa erSRMf"
+>
+  <header
+    class="sc-bwzfXH kyHYFn"
+    data-testid="display_header"
+  >
+    Scrum Poker
+  </header>
+</div>
+`;

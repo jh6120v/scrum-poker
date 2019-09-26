@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import LazyLoad from '../components/lazy-load';
+import { LazyLoad } from '../styles/common-style';
 
 export const createActionCreator = (namespace) => (actionType) => {
     const type = `${namespace}/${actionType}`;
@@ -15,7 +15,7 @@ export const createActionCreator = (namespace) => (actionType) => {
 };
 
 export const waitingRouteComponent = (Component) => () => (
-    <Suspense fallback={<LazyLoad />}>
+    <Suspense fallback={<LazyLoad>Loading...</LazyLoad>}>
         <Component />
     </Suspense>
 );
