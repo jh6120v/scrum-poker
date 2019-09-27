@@ -47,6 +47,7 @@ const Footer = styled.footer`
   height: 40px;
   overflow: hidden;
   position: fixed;
+  left: 0;
   bottom: 0;
   text-align: center;
   padding: 10px 0;
@@ -63,16 +64,40 @@ const PokerWrap = styled.div`
 
 const PokerItem = styled.div`
   display: flex;
+  width: 100px;
+  max-width: 30%;
+  margin-bottom: 10px;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 154%; // 一直都是 100%
+  }
+  &:hover {
+    transform: rotateY(180deg);
+  }
+`;
+
+const PokerItemInnerFront = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backface-visibility: hidden;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   color: #fff;
-  width: 30%;
-  height: 120px;
-  border: 2px solid #fff;
   border-radius: 7px;
-  padding: 15px;
-  margin-bottom: 10px;
+  border: 2px solid #fff;
+`;
+
+const PokerItemInnerBack = styled(PokerItemInnerFront)`
+  transform: rotateY(180deg);
 `;
 
 const Poker = () => {
@@ -81,7 +106,7 @@ const Poker = () => {
     useEffect(() => {
         // componentDidMount
         dispatch(pointListDataFetch());
-    }, []);
+    }, [dispatch]);
 
     const { listData } = useSelector((state) => state.pointList);
 
@@ -92,7 +117,14 @@ const Poker = () => {
             <Container>
                 <PokerWrap>
                     {
-                        listData.map((val) => <PokerItem key={val.point}>{ val.point === 'coffee' ? '☕' : val.point }</PokerItem>)
+                        listData.map((val) => (
+                            <PokerItem key={val.point}>
+                                <PokerItemInnerFront>
+                                    {val.point === 'coffee' ? '☕' : val.point}
+                                </PokerItemInnerFront>
+                                <PokerItemInnerBack>Back</PokerItemInnerBack>
+                            </PokerItem>
+                        ))
                     }
                 </PokerWrap>
             </Container>
