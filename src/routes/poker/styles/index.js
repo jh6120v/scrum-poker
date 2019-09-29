@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FlipCard, FlipCardFront, FlipCardBack } from './flip-card';
+import { respondTo } from '../../../styles/_mixin';
 import logo from '../../../assets/images/bugcat-logo-bg.png';
 import logo2 from '../../../assets/images/bugcat-logo-text-bg.png';
 import cardBg1 from '../../../assets/images/card-bg/card-1.gif';
@@ -33,6 +34,8 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   position: fixed;
+  left: 0;
+  top: 0;
   font-size: 20px;
   font-weight: bold;
   color: #fff;
@@ -73,6 +76,10 @@ const Footer = styled.footer`
 // flip
 const PokerContainer = styled(FlipCard)`
   height: calc(100vh - 105px);
+  ${respondTo.xs`
+    width: 350px;
+    margin: 0 auto;
+  `}
 `;
 
 const PokerListWrap = styled(FlipCardFront)`
@@ -158,6 +165,7 @@ const PokerSelectedItemFront = styled(FlipCardFront)`
   background-position: bottom;
   background-repeat: no-repeat;
   font-family: 'Orbitron', sans-serif;
+  box-shadow: inset 1px 1px 10px 5px rgba(0,0,0,0.15);
   &.img-1 {
     background-image: url(${cardBg1});
   }
