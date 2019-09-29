@@ -86,7 +86,7 @@ const PokerListWrap = styled(FlipCardFront)`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: center;
+  align-content: space-evenly;
   background: #aadff0;
 `;
 
@@ -94,8 +94,8 @@ const PokerSelectWrap = styled(FlipCardBack)`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   background: #aadff0;
+  ${(props) => (props.active ? 'overflow: hidden;' : '')}
 `;
 
 // item auto scale. real poker radio
@@ -103,11 +103,10 @@ const PokerItemWrap = styled.div`
   display: flex;
   width: 100px;
   max-width: 22%;
-  margin: 10px 0;
   &::after {
     content: "";
     display: block;
-    padding-bottom: 154%; // 高度
+    padding-bottom: 140%; // 高度
   }
 `;
 

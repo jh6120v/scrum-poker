@@ -11,22 +11,16 @@ const FlipCard = styled.div`
 `;
 
 const FlipCardFront = styled.div`
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  backface-visibility: ${((props) => (props.active ? 'hidden' : 'visible'))};
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
 `;
 
-const FlipCardBack = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+const FlipCardBack = styled(FlipCardFront)`
   transform: rotateY(180deg);
-  backface-visibility: ${((props) => (props.active ? 'visible' : 'hidden'))};
 `;
 
 export {

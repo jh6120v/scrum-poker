@@ -14,7 +14,7 @@ export { pointSelectedSet, pointSelectedClear, pointSelectedFlip };
 const initialState = {
     isSelect: false,
     selected: '',
-    img: '1',
+    img: 1,
     itemFlip: true
 };
 

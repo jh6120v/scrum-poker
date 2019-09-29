@@ -24,7 +24,7 @@ const Poker = () => {
         isSelect, selected, img, itemFlip
     } = useSelector((state) => state.pointSelector);
 
-    const select = useCallback((point = '') => {
+    const select = useCallback((point) => {
         dispatch(pointSelectedSet({
             isSelect: !isSelect,
             selected: point,
@@ -43,7 +43,7 @@ const Poker = () => {
             {isSelect ? <BackButton onClick={() => clear()}>Back</BackButton> : null}
             <Container>
                 <PokerContainer active={isSelect}>
-                    <PokerListWrap active={isSelect}>
+                    <PokerListWrap>
                         {
                             listData.map((val) => (
                                 <PokerItemWrap key={val.point} onClick={() => select(val.point)}>
@@ -56,10 +56,10 @@ const Poker = () => {
                     </PokerListWrap>
                     <PokerSelectWrap active={isSelect}>
                         <PokerSelectContainer active={itemFlip} onClick={flip}>
-                            <PokerSelectedItemFront active={itemFlip} className={`img-${img}`}>
+                            <PokerSelectedItemFront className={`img-${img}`}>
                                 {selected === 'coffee' ? '☕' : selected}
                             </PokerSelectedItemFront>
-                            <PokerSelectedItemBack active={itemFlip}>
+                            <PokerSelectedItemBack>
                                 <PokerSelectedItemBackInner />
                             </PokerSelectedItemBack>
                         </PokerSelectContainer>
@@ -67,7 +67,7 @@ const Poker = () => {
                 </PokerContainer>
 
             </Container>
-            <Footer>此工具僅供測試用</Footer>
+            <Footer>此工具僅供測試使用</Footer>
         </Wrapper>
     );
 };
