@@ -74,7 +74,7 @@ const Footer = styled.footer`
 
 // flip
 const PokerContainer = styled(FlipCard)`
-  height: calc(100vh - 105px);
+  height: calc(100vh - 145px);
   ${respondTo.xs`
     width: 350px;
     margin: 0 auto;

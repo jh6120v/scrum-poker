@@ -14,8 +14,7 @@ const ResetStyle = createGlobalStyle`
   }
   // for mozilla
   ::-moz-focus-inner {
-    border: 0;
-    border-color: transparent;
+    border: 0 transparent;
     outline : 0;
   }
 `;
