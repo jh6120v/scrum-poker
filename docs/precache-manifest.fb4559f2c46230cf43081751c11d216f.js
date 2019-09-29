@@ -117,7 +117,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/splash/launch-750x1294.png"
   },
   {
-    "revision": "586f18aa0decd4c76fdf5588ca91afff",
+    "revision": "9444382a3d2f7f4f7e67bbef0caef813",
     "url": "/favicon.ico"
   },
   {
