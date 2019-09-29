@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.7874cba51887e0844378b1cfc4660515.js"
+  "/precache-manifest.0cffae064a2629d357b99fc931b1ca14.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "scrum-poker-pwa"});

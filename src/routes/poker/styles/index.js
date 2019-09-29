@@ -53,7 +53,6 @@ const Container = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
-  min-height: 100vh;
   padding: 65px 20px 40px 20px;
 `;
 
