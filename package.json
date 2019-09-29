@@ -96,8 +96,6 @@
     "collectCoverageFrom": [
       "src/styles/*.js",
       "src/commons/*.js",
-      "src/containers/*/*.js",
-      "src/routes/poker/*/*.js",
       "!src/assets/*.*"
     ]
   }

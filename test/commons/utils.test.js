@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { render, waitForElement } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { createActionCreator, waitingRouteComponent } from '../../src/commons/utils';
+import { createActionCreator, waitingRouteComponent, getRandom } from '../../src/commons/utils';
 
 describe('test utils', () => {
     it('test createActionCreator type', () => {
@@ -44,5 +44,12 @@ describe('test utils', () => {
 
         const lazyElement = await waitForElement(() => getByText(/i am lazy/i));
         expect(lazyElement).toBeInTheDocument();
+    });
+
+    it('test getRandom.', () => {
+        const random = getRandom(1, 3);
+
+        expect(random).toBeGreaterThan(0);
+        expect(random).toBeLessThan(4);
     });
 });
