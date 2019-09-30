@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test <Spinner /> <Spinner /> snapshot. 1`] = `
+<div
+  class="sc-bdVaJa cmqDfb"
+>
+  <div
+    class="sc-bwzfXH bggjYU"
+  >
+    <div
+      class="sc-htpNat fntENR"
+    />
+    <div
+      class="sc-htpNat fntENR"
+    />
+    <div
+      class="sc-htpNat fntENR"
+    />
+  </div>
+</div>
+`;

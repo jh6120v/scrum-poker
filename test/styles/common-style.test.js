@@ -1,10 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { SpinnerWrap, BallScaleMultiple, BallScaleMultipleInner, LazyLoad } from '../../src/styles/common-style';
+import {
+    SpinnerWrap, BallScaleMultiple, BallScaleMultipleInner, LazyLoad
+} from '../../src/styles/common-style';
 
 describe('test common-style style.', () => {
-    it('<SpinnerWrap> snapshot.', () => {
+    it('test <SpinnerWrap> snapshot.', () => {
         const { container } = render(<SpinnerWrap />);
         expect(container.firstChild).toMatchSnapshot();
     });
