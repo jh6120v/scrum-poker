@@ -66,9 +66,11 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "jest-each": "^24.9.0",
     "jest-single-file-coverage": "^1.0.2",
     "jest-styled-components": "^6.3.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "redux-saga-test-plan": "^4.0.0-rc.3"
   },
   "scripts": {
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --historyApiFallback --config webpack.dev.config.js",
@@ -96,8 +98,6 @@
     "collectCoverageFrom": [
       "src/styles/*.js",
       "src/commons/*.js",
-      "src/containers/*/*.js",
-      "src/routes/poker/*/*.js",
       "!src/assets/*.*"
     ]
   }

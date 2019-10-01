@@ -3,15 +3,9 @@
 exports[`test utils rendered lazily fallback 1`] = `
 <div>
   <div
-    class="sc-bdVaJa iWvlMl"
+    class="sc-bxivhb jiTLSq"
   >
-    <div
-      class="sc-bwzfXH jgmNeI"
-    >
-      <div />
-      <div />
-      <div />
-    </div>
+    Loading...
   </div>
 </div>
 `;

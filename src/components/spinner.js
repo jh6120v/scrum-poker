@@ -1,6 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import { SpinnerWrap, BallScaleMultiple } from '../styles/common-style';
+import { SpinnerWrap, BallScaleMultiple, BallScaleMultipleInner } from '../styles/common-style';
 
 const Spinner = (props) => {
     const { show } = props;
@@ -8,9 +8,9 @@ const Spinner = (props) => {
     return (
         <SpinnerWrap show={show}>
             <BallScaleMultiple>
-                <div />
-                <div />
-                <div />
+                <BallScaleMultipleInner />
+                <BallScaleMultipleInner />
+                <BallScaleMultipleInner />
             </BallScaleMultiple>
         </SpinnerWrap>
     );

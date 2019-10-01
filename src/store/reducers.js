@@ -7,7 +7,8 @@ const createRootReducer = (history, asyncReducers) => combineReducers({
     ...asyncReducers
 });
 
-export const injectReducer = (history, store, reducerList) => {
+export const injectReducer = (history, store, reducerList = []) => {
+    console.log(reducerList);
     const injectList = store.asyncReducers;
     for (const item of reducerList.values()) {
         injectList[item.key] = item.reducer;
