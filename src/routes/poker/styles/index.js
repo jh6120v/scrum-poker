@@ -45,7 +45,7 @@ const Header = styled.header`
   overflow: hidden;
   background-color: #aadff0;
   font-family: 'Mansalva', cursive;
-  border-bottom: 0.5px dashed #fff;
+  //border-bottom: 0.5px dashed #fff;
   z-index: 3;
 `;
 
@@ -163,7 +163,7 @@ const PokerSelectedItemFront = styled(FlipCardFront)`
   background-position: bottom;
   background-repeat: no-repeat;
   font-family: 'Orbitron', sans-serif;
-  box-shadow: inset 1px 1px 10px 5px rgba(0,0,0,0.15);
+  //box-shadow: inset 1px 1px 2px 1px rgba(0,0,0,0.15);
   &.img-1 {
     background-image: url(${cardBg1});
   }

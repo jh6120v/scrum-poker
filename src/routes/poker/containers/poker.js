@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { pointListDataFetch } from '../modules/point-list';
 import { pointSelectedSet, pointSelectedClear, pointSelectedFlip } from '../modules/point-selector';
@@ -37,9 +37,27 @@ const Poker = () => {
 
     console.log(listData);
 
+    const node = useRef();
+
+    const resume = useCallback((e) => {
+        if (node.current.contains(e.target)) {
+            return;
+        }
+
+        clear();
+    }, [clear]);
+
+    useEffect(() => {
+        document.addEventListener('click', resume, true);
+
+        return () => {
+            document.removeEventListener('click', resume, true);
+        };
+    }, [resume]);
+
     return (
         <Wrapper>
-            <Header data-testid="display_header">Scrum Poker</Header>
+            <Header data-testid="display_header" />
             {isSelect ? <BackButton onClick={() => clear()}>Back</BackButton> : null}
             <Container>
                 <PokerContainer active={isSelect}>
@@ -55,7 +73,7 @@ const Poker = () => {
                         }
                     </PokerListWrap>
                     <PokerSelectWrap active={isSelect}>
-                        <PokerSelectContainer active={itemFlip} onClick={flip}>
+                        <PokerSelectContainer active={itemFlip} onClick={flip} ref={node}>
                             <PokerSelectedItemFront className={`img-${img}`}>
                                 {selected === 'coffee' ? '☕' : selected}
                             </PokerSelectedItemFront>
