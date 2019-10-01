@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "de7eac6705d5547126f2edfb82850e6f",
+    "revision": "59c19fc43f071d7c8b8bd3f011be0bb5",
     "url": "/assets/icons/android-chrome-192x192.png"
   },
   {
-    "revision": "33893fa57f52fca47f64a39ce2de7ed8",
+    "revision": "97dd62ed78e12977e6636b83eb39d7e2",
     "url": "/assets/icons/android-chrome-512x512.png"
   },
   {
@@ -77,51 +77,59 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/images/i.f7b1110769f460bf2d5cc3d67f41224c.gif"
   },
   {
-    "url": "/assets/js/0.bundle.eb9672e8331553dacf4f.js"
+    "url": "/assets/js/0.bundle.68bee7d7a668d3c271f3.js"
   },
   {
-    "url": "/assets/js/2.bundle.eb9672e8331553dacf4f.js"
+    "url": "/assets/js/2.bundle.68bee7d7a668d3c271f3.js"
   },
   {
-    "url": "/assets/js/3.bundle.eb9672e8331553dacf4f.js"
+    "url": "/assets/js/3.bundle.68bee7d7a668d3c271f3.js"
   },
   {
-    "url": "/assets/js/bundle.eb9672e8331553dacf4f.js"
+    "url": "/assets/js/bundle.68bee7d7a668d3c271f3.js"
   },
   {
     "revision": "df498b56dacb70467f0c8d8031a95f5a",
     "url": "/assets/splash/launch-1125x2436.png"
   },
   {
-    "revision": "cbf83b2da04ea6db071931809cf3ac60",
-    "url": "/assets/splash/launch-1242x2148.png"
+    "revision": "0b71680413770164c4b4ebfcaabb7776",
+    "url": "/assets/splash/launch-1242x2208.png"
   },
   {
-    "revision": "7c64b580ee1c8c29319f9a0aeac9afde",
+    "revision": "1e74a0d19c48143e92db73d14d4b906d",
+    "url": "/assets/splash/launch-1242x2688.png"
+  },
+  {
+    "revision": "3dcc4b927ca1ac606e482901a6c14556",
     "url": "/assets/splash/launch-1536x2048.png"
   },
   {
-    "revision": "740d752bbc16517dd536ad75c78efc6e",
+    "revision": "8b98ec5e4e80efec88dd3981b75aa326",
     "url": "/assets/splash/launch-1668x2224.png"
   },
   {
-    "revision": "879007c6b45d110562ca4140918e442d",
+    "revision": "93cf19202f5ba0dcb44dd3490269e76e",
+    "url": "/assets/splash/launch-1668x2388.png"
+  },
+  {
+    "revision": "e6581ad83fc40b6e64ed0df64276a6fe",
     "url": "/assets/splash/launch-2048x2732.png"
   },
   {
-    "revision": "2fe8589b0c162d193ef194541cfbe62d",
-    "url": "/assets/splash/launch-640x1136.png"
+    "revision": "6d40ac362e580990701a097292264b40",
+    "url": "/assets/splash/launch-750x1334.png"
   },
   {
-    "revision": "76288d41152283fa0784978eb0ad6a32",
-    "url": "/assets/splash/launch-750x1294.png"
+    "revision": "fdc77a1fdf6891be79e7050bccb84072",
+    "url": "/assets/splash/launch-828x1792.png"
   },
   {
     "revision": "9444382a3d2f7f4f7e67bbef0caef813",
     "url": "/favicon.ico"
   },
   {
-    "revision": "a8bf50a98a36586efe4b19880958c3c8",
+    "revision": "915db3900fdc6b4625e6ca2d270d710c",
     "url": "/index.html"
   },
   {
