@@ -36,16 +36,16 @@ const Header = styled.header`
   position: fixed;
   left: 0;
   top: 0;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  text-shadow: 1px 1px 1px rgba(29, 29, 31, 0.35);
+  text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   overflow: hidden;
   background-color: #aadff0;
   font-family: 'Mansalva', cursive;
-  border-bottom: 0.5px dashed #fff;
+  //border-bottom: 0.5px dashed #fff;
   z-index: 3;
 `;
 
@@ -62,13 +62,13 @@ const Footer = styled.footer`
   overflow: hidden;
   position: fixed;
   left: 0;
-  bottom: 10px;
+  bottom: 0;
   text-align: center;
   padding: 10px 0;
   background-color: #aadff0;
   color: #fff;
-  text-shadow: 1px 1px 1px rgba(29, 29, 31, 0.5);
-  font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
+  font-size: 14px;
   z-index: 3;
 `;
 
@@ -131,7 +131,7 @@ const PokerItemInner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 1px 1px 1px rgba(29, 29, 31, 0.35);
+  text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   background-image: url(${logo});
   background-repeat: no-repeat;
   background-position: center center;
@@ -155,12 +155,15 @@ const PokerSelectedItemFront = styled(FlipCardFront)`
   border-radius: 25px;
   cursor: pointer;
   font-size: 5rem;
-  color: #5AC9E8;
+  color: #5bb1d4;
+  text-shadow: 1px 1px 2px rgba(29, 29, 31, .5);
   padding-top: 17%;
   background-color: #fff;
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
+  font-family: 'Orbitron', sans-serif;
+  //box-shadow: inset 1px 1px 2px 1px rgba(0,0,0,0.15);
   &.img-1 {
     background-image: url(${cardBg1});
   }
@@ -225,7 +228,7 @@ const BackButton = styled.div`
   color: #fff;
   font-size: 1.2rem;
   font-family: 'Mansalva', cursive;
-  text-shadow: 1px 1px 1px rgba(29, 29, 31, 0.35);
+  text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   cursor: pointer;
 `;
 
