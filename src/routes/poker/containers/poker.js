@@ -67,7 +67,7 @@ const Poker = () => {
                 </PokerContainer>
 
             </Container>
-            <Footer>For testing purposes only</Footer>
+            <Footer>For Testing Purposes Only</Footer>
         </Wrapper>
     );
 };
