@@ -85,7 +85,7 @@ const Poker = () => {
                 </PokerContainer>
 
             </Container>
-            <Footer>此工具僅供測試使用</Footer>
+            <Footer>For Testing Purposes Only</Footer>
         </Wrapper>
     );
 };
