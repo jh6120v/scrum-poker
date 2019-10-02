@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { pointListDataFetch } from '../modules/point-list';
 import { pointSelectedSet, pointSelectedClear, pointSelectedFlip } from '../modules/point-selector';
@@ -7,12 +7,13 @@ import {
     PokerContainer, PokerListWrap, PokerSelectWrap,
     PokerItemWrap, PokerItem, PokerItemInner,
     BackButton,
-    PokerSelectContainer, PokerSelectedItemFront, PokerSelectedItemBack, PokerSelectedItemBackInner
+    PokerSelectSafari, PokerSelectContainer, PokerSelectedItemFront, PokerSelectedItemBack, PokerSelectedItemBackInner
 } from '../styles';
 import { getRandom } from '../../../commons/utils';
 
 const Poker = () => {
     const dispatch = useDispatch();
+    const [first, setFirst] = useState(true);
 
     useEffect(() => {
         // componentDidMount
@@ -25,6 +26,7 @@ const Poker = () => {
     } = useSelector((state) => state.pointSelector);
 
     const select = useCallback((point) => {
+        setFirst(false);
         dispatch(pointSelectedSet({
             isSelect: !isSelect,
             selected: point,
@@ -61,7 +63,7 @@ const Poker = () => {
                 {isSelect ? <BackButton onClick={() => clear()}>Back</BackButton> : null}
             </Header>
             <Container>
-                <PokerContainer active={isSelect}>
+                <PokerContainer active={isSelect} first={first}>
                     <PokerListWrap>
                         {
                             listData.map((val) => (
@@ -73,15 +75,17 @@ const Poker = () => {
                             ))
                         }
                     </PokerListWrap>
-                    <PokerSelectWrap active={isSelect}>
-                        <PokerSelectContainer active={itemFlip} onClick={flip} ref={node}>
-                            <PokerSelectedItemFront className={`img-${img}`}>
-                                {selected === 'coffee' ? '☕' : selected}
-                            </PokerSelectedItemFront>
-                            <PokerSelectedItemBack>
-                                <PokerSelectedItemBackInner />
-                            </PokerSelectedItemBack>
-                        </PokerSelectContainer>
+                    <PokerSelectWrap>
+                        <PokerSelectSafari>
+                            <PokerSelectContainer active={itemFlip} onClick={flip} ref={node}>
+                                <PokerSelectedItemFront className={`img-${img}`}>
+                                    {selected === 'coffee' ? '☕' : selected}
+                                </PokerSelectedItemFront>
+                                <PokerSelectedItemBack>
+                                    <PokerSelectedItemBackInner />
+                                </PokerSelectedItemBack>
+                            </PokerSelectContainer>
+                        </PokerSelectSafari>
                     </PokerSelectWrap>
                 </PokerContainer>
 

@@ -10,13 +10,14 @@ describe('test flip-card style.', () => {
     });
 
     it('test <FlipCard /> when render with props.', () => {
-        const { container } = render(<FlipCard width="100px" height="100px" duration={300} active />);
+        const { container } = render(<FlipCard width="100px" height="100px" duration={300} active first />);
         const tree = container.firstChild;
 
         expect(tree).toHaveStyleRule('width', '100px');
         expect(tree).toHaveStyleRule('height', '100px');
-        expect(tree).toHaveStyleRule('transition', 'all 300ms');
-        expect(tree).toHaveStyleRule('transform', 'rotateY(180deg)');
+        expect(tree).toHaveStyleRule('animation', 'none');
+        expect(tree).toHaveStyleRule('animation-fill-mode', 'forwards');
+        expect(tree).toHaveStyleRule('animation-duration', '300ms');
         expect(tree).toHaveStyleRule('transform-style', 'preserve-3d');
         expect(tree).toHaveStyleRule('position', 'relative');
         expect(tree).toHaveStyleRule('z-index', '1');

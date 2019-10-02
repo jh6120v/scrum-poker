@@ -4,11 +4,12 @@ exports[`test flip-card style. test <FlipCard /> snapshot. 1`] = `
 .c0 {
   width: 100%;
   height: 100%;
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
+  -webkit-animation: iEMDfD;
+  animation: iEMDfD;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;

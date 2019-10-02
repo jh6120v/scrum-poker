@@ -96,7 +96,7 @@ const PokerSelectWrap = styled(FlipCardBack)`
   justify-content: center;
   align-items: center;
   background: #aadff0;
-  ${(props) => (props.active ? 'overflow: hidden;' : '')}
+
 `;
 
 // item auto scale. real poker radio
@@ -139,6 +139,11 @@ const PokerItemInner = styled.div`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+`;
+
+const PokerSelectSafari = styled.div`
+  width: 100%;
+  overflow: hidden;
 `;
 
 const PokerSelectContainer = styled(FlipCard)`
@@ -237,5 +242,5 @@ export {
     PokerContainer, PokerListWrap, PokerSelectWrap,
     PokerItemWrap, PokerItem, PokerItemInner,
     BackButton,
-    PokerSelectContainer, PokerSelectedItemFront, PokerSelectedItemBack, PokerSelectedItemBackInner
+    PokerSelectSafari, PokerSelectContainer, PokerSelectedItemFront, PokerSelectedItemBack, PokerSelectedItemBackInner
 };
