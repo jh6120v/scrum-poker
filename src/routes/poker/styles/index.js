@@ -28,26 +28,30 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  width: 400px;
+  width: 100%;
   height: 55px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   position: fixed;
-  left: 50%;
+  left: 0;
   top: 0;
   font-size: 20px;
   font-weight: bold;
   color: #fff;
   text-align: center;
   padding: 10px;
-  margin-left: -200px;
   text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   overflow: hidden;
   background-color: #aadff0;
   font-family: 'Mansalva', cursive;
   //border-bottom: 0.5px dashed #fff;
   z-index: 3;
+  ${respondTo.sm`
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+  `}
 `;
 
 const Container = styled.div`
@@ -77,7 +81,7 @@ const Footer = styled.footer`
 // flip
 const PokerContainer = styled(FlipCard)`
   height: calc(100vh - 145px);
-  ${respondTo.xs`
+  ${respondTo.sm`
     width: 350px;
     margin: 0 auto;
   `}
@@ -144,6 +148,9 @@ const PokerItemInner = styled.div`
 const PokerSelectSafari = styled.div`
   width: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const PokerSelectContainer = styled(FlipCard)`
