@@ -19,7 +19,7 @@ import cardBg13 from '../../../assets/images/card-bg/card-13.gif';
 
 const Wrapper = styled.div`
   display: flex;
-  max-width: 1200px;
+  max-width: 400px;
   min-height: 100%;
   flex-wrap: wrap;
   flex-direction: column;
@@ -28,19 +28,20 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  width: 100%;
+  width: 400px;
   height: 55px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: fixed;
-  left: 0;
+  left: 50%;
   top: 0;
   font-size: 20px;
   font-weight: bold;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px;
+  margin-left: -200px;
   text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   overflow: hidden;
   background-color: #aadff0;
@@ -57,14 +58,15 @@ const Container = styled.div`
 `;
 
 const Footer = styled.footer`
-  width: 100%;
+  width: 400px;
   height: 40px;
   overflow: hidden;
   position: fixed;
-  left: 0;
+  left: 50%;
   bottom: 0;
   text-align: center;
   padding: 10px 0;
+  margin-left: -200px;
   background-color: #aadff0;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
@@ -102,6 +104,7 @@ const PokerItemWrap = styled.div`
   display: flex;
   width: 100px;
   max-width: 22%;
+  margin: 5px 0;
   &::after {
     content: "";
     display: block;
@@ -221,13 +224,10 @@ const PokerSelectedItemBackInner = styled(PokerItemInner)`
 `;
 
 const BackButton = styled.div`
-  position: fixed;
-  left: 15px;
-  top: 18px;
   z-index: 3;
   color: #fff;
   font-size: 1.2rem;
-  font-family: 'Mansalva', cursive;
+  font-family: 'Orbitron', sans-serif;
   text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   cursor: pointer;
 `;

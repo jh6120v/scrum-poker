@@ -57,8 +57,9 @@ const Poker = () => {
 
     return (
         <Wrapper>
-            <Header data-testid="display_header" />
-            {isSelect ? <BackButton onClick={() => clear()}>Back</BackButton> : null}
+            <Header data-testid="display_header">
+                {isSelect ? <BackButton onClick={() => clear()}>Back</BackButton> : null}
+            </Header>
             <Container>
                 <PokerContainer active={isSelect}>
                     <PokerListWrap>
