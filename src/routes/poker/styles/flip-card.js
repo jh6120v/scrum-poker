@@ -34,7 +34,6 @@ const scaleOut = keyframes`
   }
   100% {
     transform: scale(1) rotateY(0deg);
-    
   }
 `;
 

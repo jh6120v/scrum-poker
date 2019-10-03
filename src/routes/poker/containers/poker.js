@@ -1,13 +1,32 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import React, {
+    useCallback, useEffect, useState, useRef
+} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { pointListDataFetch } from '../modules/point-list';
 import { pointSelectedSet, pointSelectedClear, pointSelectedFlip } from '../modules/point-selector';
 import {
-    Wrapper, Header, Container, Footer,
-    PokerContainer, PokerListWrap, PokerSelectWrap,
-    PokerItemWrap, PokerItem, PokerItemInner,
+    Wrapper,
+    Header,
+    Container,
+    Footer,
+    PokerContainer,
+    PokerListWrap,
+    PokerSelectWrap,
+    PokerItemWrap,
+    PokerItem,
+    PokerItemInner,
     BackButton,
-    PokerSelectSafari, PokerSelectContainer, PokerSelectedItemFront, PokerSelectedItemBack, PokerSelectedItemBackInner
+    PokerSelectSafari,
+    PokerSelectContainer,
+    PokerSelectedItemFront,
+    PokerSelectedItemBack,
+    PokerSelectedItemBackInner,
+    PokerItemMask,
+    PokerSelectMask,
+    PokerSelectedItemFrontWrap,
+    PokerSelectedItemBackWrap,
+    PokerSelectedItemFrontMask,
+    PokerSelectedItemBackMask
 } from '../styles';
 import { getRandom } from '../../../commons/utils';
 
@@ -60,15 +79,16 @@ const Poker = () => {
     return (
         <Wrapper>
             <Header data-testid="display_header">
-                {isSelect ? <BackButton onClick={() => clear()}>Back</BackButton> : null}
+                <BackButton onClick={() => clear()} isSelect={isSelect}>＜ Back</BackButton>
             </Header>
             <Container>
-                <PokerContainer active={isSelect} first={first}>
+                <PokerContainer active={isSelect} first={first} duration={400}>
                     <PokerListWrap>
                         {
                             listData.map((val) => (
                                 <PokerItemWrap key={val.point} onClick={() => select(val.point)}>
                                     <PokerItem>
+                                        <PokerItemMask active={isSelect} />
                                         <PokerItemInner>{val.point === 'coffee' ? '☕' : val.point}</PokerItemInner>
                                     </PokerItem>
                                 </PokerItemWrap>
@@ -77,12 +97,19 @@ const Poker = () => {
                     </PokerListWrap>
                     <PokerSelectWrap>
                         <PokerSelectSafari>
-                            <PokerSelectContainer active={itemFlip} onClick={flip} ref={node}>
+                            <PokerSelectMask active={!isSelect} onClick={flip} ref={node} />
+                            <PokerSelectContainer active={itemFlip} duration={400}>
                                 <PokerSelectedItemFront className={`img-${img}`}>
-                                    {selected === 'coffee' ? '☕' : selected}
+                                    <PokerSelectedItemFrontWrap>
+                                        <PokerSelectedItemFrontMask active={itemFlip} />
+                                        {selected === 'coffee' ? '☕' : selected}
+                                    </PokerSelectedItemFrontWrap>
                                 </PokerSelectedItemFront>
                                 <PokerSelectedItemBack>
-                                    <PokerSelectedItemBackInner />
+                                    <PokerSelectedItemBackWrap>
+                                        <PokerSelectedItemBackMask active={!itemFlip} />
+                                        <PokerSelectedItemBackInner />
+                                    </PokerSelectedItemBackWrap>
                                 </PokerSelectedItemBack>
                             </PokerSelectContainer>
                         </PokerSelectSafari>

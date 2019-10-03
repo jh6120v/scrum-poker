@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FlipCard, FlipCardFront, FlipCardBack } from './flip-card';
 import { respondTo } from '../../../styles/_mixin';
 import logo from '../../../assets/images/bugcat-logo-bg.png';
@@ -91,8 +91,9 @@ const PokerListWrap = styled(FlipCardFront)`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: space-evenly;
+  align-content: center;
   background: #aadff0;
+  z-index: 1;
 `;
 
 const PokerSelectWrap = styled(FlipCardBack)`
@@ -100,7 +101,7 @@ const PokerSelectWrap = styled(FlipCardBack)`
   justify-content: center;
   align-items: center;
   background: #aadff0;
-
+  z-index: 1;
 `;
 
 // item auto scale. real poker radio
@@ -108,7 +109,7 @@ const PokerItemWrap = styled.div`
   display: flex;
   width: 100px;
   max-width: 22%;
-  margin: 5px 0;
+  margin: 6.5px 0;
   &::after {
     content: "";
     display: block;
@@ -127,12 +128,33 @@ const PokerItem = styled.div`
   background: #fff;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
+`;
+
+const PokerItemMask = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 200ms linear;
+  z-index: 0;
+  ${(props) => {
+        if (props.active) {
+            return css`
+              background: rgba(0,0,0,1);
+            `;
+        }
+        return css`
+          background: rgba(0,0,0,0);
+        `;
+    }};
 `;
 
 const PokerItemInner = styled.div`
   width: 90%;
   height: 94%;
-  border-radius: 20%;
+  border-radius: 10px;
   color: #fff;
   background-color: #5bb1d4;
   display: flex;
@@ -151,11 +173,18 @@ const PokerSelectSafari = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  border-radius: 25px;
+`;
+
+const PokerSelectMask = styled(PokerItemMask)`
+  z-index: 2;
+  border-radius: 25px;
 `;
 
 const PokerSelectContainer = styled(FlipCard)`
   display: flex;
-  width: 90%;
+  width: 100%;
   height: auto;
   &:after {
      content: "";
@@ -172,13 +201,12 @@ const PokerSelectedItemFront = styled(FlipCardFront)`
   font-size: 5rem;
   color: #5bb1d4;
   text-shadow: 1px 1px 2px rgba(29, 29, 31, .5);
-  padding-top: 17%;
   background-color: #fff;
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
   font-family: 'Orbitron', sans-serif;
-  //box-shadow: inset 1px 1px 2px 1px rgba(0,0,0,0.15);
+  z-index: 1;
   &.img-1 {
     background-image: url(${cardBg1});
   }
@@ -220,6 +248,21 @@ const PokerSelectedItemFront = styled(FlipCardFront)`
   }
 `;
 
+const PokerSelectedItemFrontWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 17%;
+`;
+
+const PokerSelectedItemFrontMask = styled(PokerItemMask)`
+  z-index: 0;
+  border-radius: 25px;
+`;
+
 const PokerSelectedItemBack = styled(FlipCardBack)`
   display: flex;
   justify-content: center;
@@ -228,6 +271,17 @@ const PokerSelectedItemBack = styled(FlipCardBack)`
   cursor: pointer;
   transform: rotateY(180deg);
   background-color: #fff;
+  z-index: 1;
+`;
+
+const PokerSelectedItemBackWrap = styled(PokerSelectedItemFrontWrap)`
+  align-items: center;
+  padding-top: 0;
+`;
+
+const PokerSelectedItemBackMask = styled(PokerItemMask)`
+  z-index: 2;
+  border-radius: 25px;
 `;
 
 const PokerSelectedItemBackInner = styled(PokerItemInner)`
@@ -242,12 +296,27 @@ const BackButton = styled.div`
   font-family: 'Orbitron', sans-serif;
   text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   cursor: pointer;
+  transition: all 0.2s ease-in;
+  ${(props) => {
+        if (props.isSelect) {
+            return css`
+              opacity: 1;
+              visibility: visible;
+            `;
+        }
+        return css`
+          opacity: 0;
+          visibility: hidden;
+        `;
+    }};
 `;
 
 export {
     Wrapper, Header, Container, Footer,
     PokerContainer, PokerListWrap, PokerSelectWrap,
-    PokerItemWrap, PokerItem, PokerItemInner,
+    PokerItemWrap, PokerItemMask, PokerItem, PokerItemInner,
     BackButton,
-    PokerSelectSafari, PokerSelectContainer, PokerSelectedItemFront, PokerSelectedItemBack, PokerSelectedItemBackInner
+    PokerSelectSafari, PokerSelectMask, PokerSelectContainer,
+    PokerSelectedItemFront, PokerSelectedItemFrontWrap, PokerSelectedItemFrontMask,
+    PokerSelectedItemBack, PokerSelectedItemBackWrap, PokerSelectedItemBackMask, PokerSelectedItemBackInner
 };
