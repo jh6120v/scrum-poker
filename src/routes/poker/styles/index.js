@@ -199,13 +199,11 @@ const PokerSelectedItemFront = styled(FlipCardFront)`
   border-radius: 25px;
   cursor: pointer;
   font-size: 5rem;
-  color: #5bb1d4;
-  text-shadow: 1px 1px 2px rgba(29, 29, 31, .5);
+  color: #5AC9E8;
   background-color: #fff;
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
-  font-family: 'Orbitron', sans-serif;
   z-index: 1;
   &.img-1 {
     background-image: url(${cardBg1});
