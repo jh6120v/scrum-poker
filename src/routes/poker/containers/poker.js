@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import React, {
+    useCallback, useEffect, useState, useRef
+} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { pointListDataFetch } from '../modules/point-list';
 import { pointSelectedSet, pointSelectedClear, pointSelectedFlip } from '../modules/point-selector';
@@ -19,7 +21,12 @@ import {
     PokerSelectedItemFront,
     PokerSelectedItemBack,
     PokerSelectedItemBackInner,
-    PokerItemMask, PokerSelectMask
+    PokerItemMask,
+    PokerSelectMask,
+    PokerSelectedItemFrontWrap,
+    PokerSelectedItemBackWrap,
+    PokerSelectedItemFrontMask,
+    PokerSelectedItemBackMask
 } from '../styles';
 import { getRandom } from '../../../commons/utils';
 
@@ -91,12 +98,18 @@ const Poker = () => {
                     <PokerSelectWrap>
                         <PokerSelectSafari>
                             <PokerSelectMask active={!isSelect} onClick={flip} ref={node} />
-                            <PokerSelectContainer active={itemFlip} duration={400} >
+                            <PokerSelectContainer active={itemFlip} duration={400}>
                                 <PokerSelectedItemFront className={`img-${img}`}>
-                                    {selected === 'coffee' ? '☕' : selected}
+                                    <PokerSelectedItemFrontWrap>
+                                        <PokerSelectedItemFrontMask active={itemFlip} />
+                                        {selected === 'coffee' ? '☕' : selected}
+                                    </PokerSelectedItemFrontWrap>
                                 </PokerSelectedItemFront>
                                 <PokerSelectedItemBack>
-                                    <PokerSelectedItemBackInner />
+                                    <PokerSelectedItemBackWrap>
+                                        <PokerSelectedItemBackMask active={!itemFlip} />
+                                        <PokerSelectedItemBackInner />
+                                    </PokerSelectedItemBackWrap>
                                 </PokerSelectedItemBack>
                             </PokerSelectContainer>
                         </PokerSelectSafari>
