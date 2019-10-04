@@ -79,7 +79,7 @@ const Poker = () => {
     return (
         <Wrapper>
             <Header data-testid="display_header">
-                <BackButton onClick={() => clear()} isSelect={isSelect}>＜ Back</BackButton>
+                <BackButton onClick={() => clear()} isSelect={isSelect}>&lt; Back</BackButton>
             </Header>
             <Container>
                 <PokerContainer active={isSelect} first={first} duration={400}>

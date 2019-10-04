@@ -41,11 +41,9 @@ const Header = styled.header`
   color: #fff;
   text-align: center;
   padding: 10px;
-  text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   overflow: hidden;
   background-color: #aadff0;
   font-family: 'Mansalva', cursive;
-  //border-bottom: 0.5px dashed #fff;
   z-index: 3;
   ${respondTo.sm`
     left: 50%;
@@ -69,12 +67,11 @@ const Footer = styled.footer`
   left: 50%;
   bottom: 0;
   text-align: center;
-  padding: 10px 0;
+  padding: 5px 0;
   margin-left: -200px;
   background-color: #aadff0;
   color: #fff;
-  text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
-  font-size: 14px;
+  font-size: 16px;
   z-index: 3;
 `;
 
@@ -292,7 +289,6 @@ const BackButton = styled.div`
   color: #fff;
   font-size: 1.2rem;
   font-family: 'Orbitron', sans-serif;
-  text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   cursor: pointer;
   transition: all 0.2s ease-in;
   ${(props) => {
