@@ -5,17 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { pointListDataFetch } from '../modules/point-list';
 import { pointSelectedSet, pointSelectedClear, pointSelectedFlip } from '../modules/point-selector';
 import {
-    Wrapper,
-    Header,
-    Container,
-    Footer,
     PokerContainer,
     PokerListWrap,
     PokerSelectWrap,
     PokerItemWrap,
     PokerItem,
     PokerItemInner,
-    BackButton,
     PokerSelectSafari,
     PokerSelectContainer,
     PokerSelectedItemFront,
@@ -29,6 +24,7 @@ import {
     PokerSelectedItemBackMask
 } from '../styles';
 import { getRandom } from '../../../commons/utils';
+import { headerTitleDefault, headerTitleSet, nextLinkActSetting, prevLinkActClose } from '../../../modules/header';
 
 const Poker = () => {
     const dispatch = useDispatch();
@@ -37,6 +33,17 @@ const Poker = () => {
     useEffect(() => {
         // componentDidMount
         dispatch(pointListDataFetch());
+
+        return () => {
+            console.log('components did update.');
+            dispatch(pointSelectedClear());
+            setFirst(true);
+        };
+    }, [dispatch]);
+
+    useEffect(() => {
+        dispatch(headerTitleDefault());
+        dispatch(nextLinkActSetting());
     }, [dispatch]);
 
     const { listData } = useSelector((state) => state.pointList);
@@ -51,22 +58,27 @@ const Poker = () => {
             selected: point,
             img: getRandom(1, 13)
         }));
+
+        dispatch(prevLinkActClose());
+        dispatch(headerTitleSet({
+            title: ''
+        }));
     }, [dispatch, isSelect]);
 
-    const clear = useCallback(() => dispatch(pointSelectedClear()), [dispatch]);
     const flip = useCallback(() => dispatch(pointSelectedFlip()), [dispatch]);
 
-    console.log(listData);
+    // console.log(isSelect);
 
     const node = useRef();
-
     const resume = useCallback((e) => {
         if (node.current.contains(e.target)) {
             return;
         }
 
-        clear();
-    }, [clear]);
+        dispatch(pointSelectedClear());
+        dispatch(nextLinkActSetting());
+        dispatch(headerTitleDefault());
+    }, [dispatch]);
 
     useEffect(() => {
         document.addEventListener('click', resume, true);
@@ -77,48 +89,39 @@ const Poker = () => {
     }, [resume]);
 
     return (
-        <Wrapper>
-            <Header data-testid="display_header">
-                <BackButton onClick={() => clear()} isSelect={isSelect}>&lt; Back</BackButton>
-            </Header>
-            <Container>
-                <PokerContainer active={isSelect} first={first} duration={400}>
-                    <PokerListWrap>
-                        {
-                            listData.map((val) => (
-                                <PokerItemWrap key={val.point} onClick={() => select(val.point)}>
-                                    <PokerItem>
-                                        <PokerItemMask active={isSelect} />
-                                        <PokerItemInner>{val.point === 'coffee' ? '☕' : val.point}</PokerItemInner>
-                                    </PokerItem>
-                                </PokerItemWrap>
-                            ))
-                        }
-                    </PokerListWrap>
-                    <PokerSelectWrap>
-                        <PokerSelectSafari>
-                            <PokerSelectMask active={!isSelect} onClick={flip} ref={node} />
-                            <PokerSelectContainer active={itemFlip} duration={400}>
-                                <PokerSelectedItemFront className={`img-${img}`}>
-                                    <PokerSelectedItemFrontWrap>
-                                        <PokerSelectedItemFrontMask active={itemFlip} />
-                                        {selected === 'coffee' ? '☕' : selected}
-                                    </PokerSelectedItemFrontWrap>
-                                </PokerSelectedItemFront>
-                                <PokerSelectedItemBack>
-                                    <PokerSelectedItemBackWrap>
-                                        <PokerSelectedItemBackMask active={!itemFlip} />
-                                        <PokerSelectedItemBackInner />
-                                    </PokerSelectedItemBackWrap>
-                                </PokerSelectedItemBack>
-                            </PokerSelectContainer>
-                        </PokerSelectSafari>
-                    </PokerSelectWrap>
-                </PokerContainer>
-
-            </Container>
-            <Footer>For Testing Purposes Only</Footer>
-        </Wrapper>
+        <PokerContainer active={isSelect} first={first} duration={400}>
+            <PokerListWrap>
+                {
+                    listData.map((val) => (
+                        <PokerItemWrap key={val.point} onClick={() => select(val.point)}>
+                            <PokerItem>
+                                <PokerItemMask active={isSelect} />
+                                <PokerItemInner>{val.point === 'coffee' ? '☕' : val.point}</PokerItemInner>
+                            </PokerItem>
+                        </PokerItemWrap>
+                    ))
+                }
+            </PokerListWrap>
+            <PokerSelectWrap>
+                <PokerSelectSafari ref={node}>
+                    <PokerSelectMask active={!isSelect} onClick={flip} />
+                    <PokerSelectContainer active={itemFlip} duration={400}>
+                        <PokerSelectedItemFront className={`img-${img}`}>
+                            <PokerSelectedItemFrontWrap>
+                                <PokerSelectedItemFrontMask active={itemFlip} />
+                                {selected === 'coffee' ? '☕' : selected}
+                            </PokerSelectedItemFrontWrap>
+                        </PokerSelectedItemFront>
+                        <PokerSelectedItemBack>
+                            <PokerSelectedItemBackWrap>
+                                <PokerSelectedItemBackMask active={!itemFlip} />
+                                <PokerSelectedItemBackInner />
+                            </PokerSelectedItemBackWrap>
+                        </PokerSelectedItemBack>
+                    </PokerSelectContainer>
+                </PokerSelectSafari>
+            </PokerSelectWrap>
+        </PokerContainer>
     );
 };
 

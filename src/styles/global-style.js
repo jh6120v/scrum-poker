@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
   #app {
     height: 100%;
   }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;

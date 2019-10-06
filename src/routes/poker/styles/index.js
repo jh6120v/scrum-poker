@@ -17,67 +17,9 @@ import cardBg11 from '../../../assets/images/card-bg/card-11.gif';
 import cardBg12 from '../../../assets/images/card-bg/card-12.gif';
 import cardBg13 from '../../../assets/images/card-bg/card-13.gif';
 
-const Wrapper = styled.div`
-  display: flex;
-  max-width: 400px;
-  min-height: 100%;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin:0 auto;
-  padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
-`;
-
-const Header = styled.header`
-  width: 100%;
-  height: 55px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  overflow: hidden;
-  background-color: #aadff0;
-  font-family: 'Mansalva', cursive;
-  z-index: 3;
-  ${respondTo.sm`
-    left: 50%;
-    width: 400px;
-    margin-left: -200px;
-  `}
-`;
-
-const Container = styled.div`
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-  padding: 65px 20px 40px 20px;
-`;
-
-const Footer = styled.footer`
-  width: 400px;
-  height: 40px;
-  overflow: hidden;
-  position: fixed;
-  left: 50%;
-  bottom: 0;
-  text-align: center;
-  padding: 5px 0;
-  margin-left: -200px;
-  background-color: #aadff0;
-  color: #fff;
-  font-size: 16px;
-  z-index: 3;
-`;
-
 // flip
 const PokerContainer = styled(FlipCard)`
-  height: calc(100vh - 145px);
+  //height: calc(100vh - 135px);
   ${respondTo.sm`
     width: 350px;
     margin: 0 auto;
@@ -284,32 +226,32 @@ const PokerSelectedItemBackInner = styled(PokerItemInner)`
   background-size: contain;
 `;
 
-const BackButton = styled.div`
+const CloseButton = styled.div`
   z-index: 3;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 25px;
   font-family: 'Orbitron', sans-serif;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  ${(props) => {
-        if (props.isSelect) {
-            return css`
-              opacity: 1;
-              visibility: visible;
-            `;
-        }
-        return css`
-          opacity: 0;
-          visibility: hidden;
-        `;
-    }};
+  padding-left: 3px;
+`;
+
+const Setting = styled.div`
+  z-index: 3;
+  transition: all 0.2s ease-in;
+  padding-right: 3px;
+  a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+  }
 `;
 
 export {
-    Wrapper, Header, Container, Footer,
     PokerContainer, PokerListWrap, PokerSelectWrap,
     PokerItemWrap, PokerItemMask, PokerItem, PokerItemInner,
-    BackButton,
+    CloseButton, Setting,
     PokerSelectSafari, PokerSelectMask, PokerSelectContainer,
     PokerSelectedItemFront, PokerSelectedItemFrontWrap, PokerSelectedItemFrontMask,
     PokerSelectedItemBack, PokerSelectedItemBackWrap, PokerSelectedItemBackMask, PokerSelectedItemBackInner
