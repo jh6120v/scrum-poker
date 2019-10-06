@@ -63,7 +63,7 @@ const slideFromBottomBackOut = keyframes`
 const RouterAnimation = styled.div`
   position: relative;
   width: 100vw;
-  height: calc(100vh - 85px);
+  height: calc(100vh - 90px);
   .page-fade-in {
     &-enter {
       animation: ${fadeIn} .3s;

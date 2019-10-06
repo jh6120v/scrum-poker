@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   width: 100%;
-  height: 45px;
+  height: 50px;
   position: fixed;
   left: 0;
   top: 0;
@@ -53,7 +53,7 @@ const Container = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
-  padding: 45px 0 40px 0;
+  padding: 50px 0 40px 0;
 `;
 
 const Footer = styled.footer`
