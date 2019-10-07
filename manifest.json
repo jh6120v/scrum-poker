@@ -4,7 +4,7 @@
   "description": "咖波敏捷撲克牌",
   "scope": ".",
   "start_url": "/?utm_source=web_app_manifest",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#5bb1d4",
   "background_color": "#5bb1d4",

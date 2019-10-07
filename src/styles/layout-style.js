@@ -23,6 +23,7 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  margin-top: env(safe-area-inset-top);
   padding: 0 5px;
   overflow: hidden;
   background-color: #6cb8cf;
@@ -65,7 +66,10 @@ const Footer = styled.footer`
   position: fixed;
   left: 0;
   bottom: 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: env(safe-area-inset-bottom);
   padding: 5px 0;
   background-color: #aadff0;
   color: #fff;

@@ -64,7 +64,7 @@ const slideFromBottomBackOut = keyframes`
 const RouterAnimation = styled.div`
   position: relative;
   width: 100vw;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 90px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   ${respondTo.xs`
     width: 400px;
   `}
