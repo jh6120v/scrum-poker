@@ -7,8 +7,10 @@ const Wrapper = styled.div`
   min-height: 100%;
   flex-wrap: wrap;
   flex-direction: column;
-  margin:0 auto;
-  padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+  margin: 0;
+  ${respondTo.xs`
+    margin: 0 auto;
+  `}
 `;
 
 const Header = styled.header`
@@ -25,7 +27,7 @@ const Header = styled.header`
   overflow: hidden;
   background-color: #6cb8cf;
   z-index: 3;
-  ${respondTo.sm`
+  ${respondTo.xs`
     left: 50%;
     width: 400px;
     margin-left: -200px;

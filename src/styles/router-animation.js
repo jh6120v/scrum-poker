@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { respondTo } from './_mixin';
 
 const fadeIn = keyframes`
   from {
@@ -64,6 +65,9 @@ const RouterAnimation = styled.div`
   position: relative;
   width: 100vw;
   height: calc(100vh - 90px);
+  ${respondTo.xs`
+    width: 400px;
+  `}
   .page-fade-in {
     &-enter {
       animation: ${fadeIn} .3s;
@@ -132,9 +136,12 @@ const RouteAnimateContent = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  box-shadow: 0 0 2px 2px rgba(0,0,0,0.15);
+  //box-shadow: -5px 0 2px -3px rgba(0,0,0,0.15);
   background-color: #aadff0;
   padding: 10px 20px;
+  overflow: auto;
+  border-left: 1px solid #6cb8cf;
+  border-right: 1px solid #6cb8cf;
 `;
 
 export {

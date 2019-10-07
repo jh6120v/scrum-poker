@@ -11,13 +11,15 @@ export { pointListDataFetch, pointListDataSet };
 
 // Reducers
 const initialState = {
-    listData: []
+    listData: [],
+    cache: false
 };
 
 const handlers = {
     [pointListDataSet.type]: (state, { payload: { listData } }) => ({
         ...state,
-        listData
+        listData,
+        cache: true
     })
 };
 

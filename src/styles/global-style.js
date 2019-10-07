@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select:none;
+    padding-top: env(safe-area-inset-top);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
   }
   #app {
     height: 100%;

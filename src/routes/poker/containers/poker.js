@@ -24,18 +24,28 @@ import {
     PokerSelectedItemBackMask
 } from '../styles';
 import { getRandom } from '../../../commons/utils';
-import { headerTitleDefault, headerTitleSet, nextLinkActSetting, prevLinkActClose } from '../../../modules/header';
+import {
+    headerTitleDefault, headerTitleSet, nextLinkActSetting, prevLinkActClose
+} from '../../../modules/header';
 
 const Poker = () => {
     const dispatch = useDispatch();
     const [first, setFirst] = useState(true);
+    const { listData, cache } = useSelector((state) => state.pointList);
+    const {
+        isSelect, selected, img, itemFlip
+    } = useSelector((state) => state.pointSelector);
 
     useEffect(() => {
-        // componentDidMount
-        dispatch(pointListDataFetch());
+        console.log('components did mount.');
+
+        if (cache === false) {
+            dispatch(pointListDataFetch());
+        }
 
         return () => {
             console.log('components did update.');
+
             dispatch(pointSelectedClear());
             setFirst(true);
         };
@@ -45,11 +55,6 @@ const Poker = () => {
         dispatch(headerTitleDefault());
         dispatch(nextLinkActSetting());
     }, [dispatch]);
-
-    const { listData } = useSelector((state) => state.pointList);
-    const {
-        isSelect, selected, img, itemFlip
-    } = useSelector((state) => state.pointSelector);
 
     const select = useCallback((point) => {
         setFirst(false);
