@@ -21,7 +21,7 @@ import {
     PokerSelectedItemFrontWrap,
     PokerSelectedItemBackWrap,
     PokerSelectedItemFrontMask,
-    PokerSelectedItemBackMask
+    PokerSelectedItemBackMask, CoffeeCat
 } from '../styles';
 import { getRandom } from '../../../commons/utils';
 import {
@@ -49,7 +49,7 @@ const Poker = () => {
             dispatch(pointSelectedClear());
             setFirst(true);
         };
-    }, [dispatch]);
+    }, [cache, dispatch]);
 
     useEffect(() => {
         dispatch(headerTitleDefault());
@@ -101,7 +101,7 @@ const Poker = () => {
                         <PokerItemWrap key={val.point} onClick={() => select(val.point)}>
                             <PokerItem>
                                 <PokerItemMask active={isSelect} />
-                                <PokerItemInner>{val.point === 'coffee' ? '☕' : val.point}</PokerItemInner>
+                                <PokerItemInner>{val.point === 'coffee' ? <CoffeeCat width="80%" height="50%" /> : val.point}</PokerItemInner>
                             </PokerItem>
                         </PokerItemWrap>
                     ))
@@ -114,7 +114,7 @@ const Poker = () => {
                         <PokerSelectedItemFront className={`img-${img}`}>
                             <PokerSelectedItemFrontWrap>
                                 <PokerSelectedItemFrontMask active={itemFlip} />
-                                {selected === 'coffee' ? '☕' : selected}
+                                {selected === 'coffee' ? <CoffeeCat /> : selected}
                             </PokerSelectedItemFrontWrap>
                         </PokerSelectedItemFront>
                         <PokerSelectedItemBack>

@@ -136,12 +136,10 @@ const RouteAnimateContent = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  //box-shadow: -5px 0 2px -3px rgba(0,0,0,0.15);
+  box-shadow: -5px 0 2px -3px rgba(0,0,0,0.15);
   background-color: #aadff0;
   padding: 10px 20px;
   overflow: auto;
-  border-left: 1px solid #6cb8cf;
-  border-right: 1px solid #6cb8cf;
 `;
 
 export {

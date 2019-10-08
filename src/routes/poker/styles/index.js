@@ -16,6 +16,7 @@ import cardBg10 from '../../../assets/images/card-bg/card-10.gif';
 import cardBg11 from '../../../assets/images/card-bg/card-11.gif';
 import cardBg12 from '../../../assets/images/card-bg/card-12.gif';
 import cardBg13 from '../../../assets/images/card-bg/card-13.gif';
+import cofeeCat from '../../../assets/images/coffee-cat.png';
 
 // flip
 const PokerContainer = styled(FlipCard)`
@@ -248,11 +249,20 @@ const Setting = styled.div`
   }
 `;
 
+const CoffeeCat = styled.div`
+  width: ${(props) => (props.width ? props.width : '30%')};
+  height: ${(props) => (props.height ? props.height : '20%')};
+  background-image: url(${cofeeCat});
+  background-repeat: no-repeat;
+  background-size: contain;
+`;
+
 export {
     PokerContainer, PokerListWrap, PokerSelectWrap,
     PokerItemWrap, PokerItemMask, PokerItem, PokerItemInner,
     CloseButton, Setting,
     PokerSelectSafari, PokerSelectMask, PokerSelectContainer,
     PokerSelectedItemFront, PokerSelectedItemFrontWrap, PokerSelectedItemFrontMask,
-    PokerSelectedItemBack, PokerSelectedItemBackWrap, PokerSelectedItemBackMask, PokerSelectedItemBackInner
+    PokerSelectedItemBack, PokerSelectedItemBackWrap, PokerSelectedItemBackMask, PokerSelectedItemBackInner,
+    CoffeeCat
 };

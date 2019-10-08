@@ -53,6 +53,7 @@ const NextLink = styled.div`
 
 const Container = styled.div`
   width: 100%;
+  height: 100%;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
