@@ -21,6 +21,8 @@ import cofeeCat from '../../../assets/images/coffee-cat.png';
 // flip
 const PokerContainer = styled(FlipCard)`
   //height: calc(100vh - 135px);
+  width: 85%;
+  margin: 0 auto;
   ${respondTo.sm`
     width: 350px;
     margin: 0 auto;

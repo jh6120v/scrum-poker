@@ -26,7 +26,6 @@ injectReducer(history, store, [
 ]);
 
 const App = () => {
-    const dispatch = useDispatch();
     const { isShow } = useSelector((state) => state.spinner);
     const { title, prev, next } = useSelector((state) => state.header);
 
