@@ -2,7 +2,6 @@ import React, {
     useCallback, useEffect, useState, useRef
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { pointListDataFetch } from '../modules/point-list';
 import { pointSelectedSet, pointSelectedClear, pointSelectedFlip } from '../modules/point-selector';
 import {
     PokerContainer,
@@ -21,7 +20,7 @@ import {
     PokerSelectedItemFrontWrap,
     PokerSelectedItemBackWrap,
     PokerSelectedItemFrontMask,
-    PokerSelectedItemBackMask, CoffeeCat
+    PokerSelectedItemBackMask, CoffeeCat, PokerWrap
 } from '../styles';
 import { getRandom } from '../../../commons/utils';
 import {
@@ -31,7 +30,7 @@ import {
 const Poker = () => {
     const dispatch = useDispatch();
     const [first, setFirst] = useState(true);
-    const { listData, cache } = useSelector((state) => state.pointList);
+    const { listData } = useSelector((state) => state.pointList);
     const {
         isSelect, selected, img, itemFlip
     } = useSelector((state) => state.pointSelector);
@@ -39,17 +38,13 @@ const Poker = () => {
     useEffect(() => {
         console.log('components did mount.');
 
-        if (cache === false) {
-            dispatch(pointListDataFetch());
-        }
-
         return () => {
-            console.log('components did update.');
+            console.log('components will unmount.');
 
             dispatch(pointSelectedClear());
             setFirst(true);
         };
-    }, [cache, dispatch]);
+    }, [dispatch]);
 
     useEffect(() => {
         dispatch(headerTitleDefault());
@@ -94,39 +89,44 @@ const Poker = () => {
     }, [resume]);
 
     return (
-        <PokerContainer active={isSelect} first={first} duration={400}>
-            <PokerListWrap>
-                {
-                    listData.map((val) => (
-                        <PokerItemWrap key={val.point} onClick={() => select(val.point)}>
-                            <PokerItem>
-                                <PokerItemMask active={isSelect} />
-                                <PokerItemInner>{val.point === 'coffee' ? <CoffeeCat width="80%" height="50%" /> : val.point}</PokerItemInner>
-                            </PokerItem>
-                        </PokerItemWrap>
-                    ))
-                }
-            </PokerListWrap>
-            <PokerSelectWrap>
-                <PokerSelectSafari ref={node}>
-                    <PokerSelectMask active={!isSelect} onClick={flip} />
-                    <PokerSelectContainer active={itemFlip} duration={400}>
-                        <PokerSelectedItemFront className={`img-${img}`}>
-                            <PokerSelectedItemFrontWrap>
-                                <PokerSelectedItemFrontMask active={itemFlip} />
-                                {selected === 'coffee' ? <CoffeeCat /> : selected}
-                            </PokerSelectedItemFrontWrap>
-                        </PokerSelectedItemFront>
-                        <PokerSelectedItemBack>
-                            <PokerSelectedItemBackWrap>
-                                <PokerSelectedItemBackMask active={!itemFlip} />
-                                <PokerSelectedItemBackInner />
-                            </PokerSelectedItemBackWrap>
-                        </PokerSelectedItemBack>
-                    </PokerSelectContainer>
-                </PokerSelectSafari>
-            </PokerSelectWrap>
-        </PokerContainer>
+        <PokerWrap>
+            <PokerContainer active={isSelect} first={first} duration={400}>
+                <PokerListWrap>
+                    {
+                        listData.map((val) => (
+                            <PokerItemWrap key={val.point} onClick={() => select(val.point)}>
+                                <PokerItem>
+                                    <PokerItemMask active={isSelect} />
+                                    <PokerItemInner>
+                                        {val.point === 'coffee'
+                                            ? <CoffeeCat width="80%" height="50%" /> : val.point}
+                                    </PokerItemInner>
+                                </PokerItem>
+                            </PokerItemWrap>
+                        ))
+                    }
+                </PokerListWrap>
+                <PokerSelectWrap>
+                    <PokerSelectSafari ref={node}>
+                        <PokerSelectMask active={!isSelect} onClick={flip} />
+                        <PokerSelectContainer active={itemFlip} duration={400}>
+                            <PokerSelectedItemFront className={`img-${img}`}>
+                                <PokerSelectedItemFrontWrap>
+                                    <PokerSelectedItemFrontMask active={itemFlip} />
+                                    {selected === 'coffee' ? <CoffeeCat /> : selected}
+                                </PokerSelectedItemFrontWrap>
+                            </PokerSelectedItemFront>
+                            <PokerSelectedItemBack>
+                                <PokerSelectedItemBackWrap>
+                                    <PokerSelectedItemBackMask active={!itemFlip} />
+                                    <PokerSelectedItemBackInner />
+                                </PokerSelectedItemBackWrap>
+                            </PokerSelectedItemBack>
+                        </PokerSelectContainer>
+                    </PokerSelectSafari>
+                </PokerSelectWrap>
+            </PokerContainer>
+        </PokerWrap>
     );
 };
 

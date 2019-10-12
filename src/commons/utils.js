@@ -1,6 +1,13 @@
 import React, { Suspense } from 'react';
 import { LazyLoad } from '../styles/common-style';
 
+export const personalDefaultSetting = {
+    sequenceType: 'planning-poker',
+    color: '#FFF',
+    keepOnScreen: false,
+    autoHideCard: false
+};
+
 export const createActionCreator = (namespace) => (actionType) => {
     const type = `${namespace}/${actionType}`;
     const actionCreator = (payload = {}) => ({

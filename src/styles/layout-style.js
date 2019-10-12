@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   `}
 `;
 
-const Header = styled.header`
+const HeaderStyle = styled.header`
   width: 100%;
   height: 50px;
   position: fixed;
@@ -57,7 +57,6 @@ const Container = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
-  padding: 50px 0 40px 0;
 `;
 
 const Footer = styled.footer`
@@ -70,8 +69,7 @@ const Footer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: env(safe-area-inset-bottom);
-  padding: 5px 0;
+  padding: 5px 0 calc(5px + env(safe-area-inset-bottom)) 0;
   background-color: #aadff0;
   color: #fff;
   font-size: 16px;
@@ -79,5 +77,5 @@ const Footer = styled.footer`
 `;
 
 export {
-    Wrapper, Header, Title, PrevLink, NextLink, Container, Footer
+    Wrapper, HeaderStyle, Title, PrevLink, NextLink, Container, Footer
 };

@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { loadProgressBar } from 'axios-progress-bar';
+// import { loadProgressBar } from 'axios-progress-bar';
 
-export const getPointListDataApi = () => {
+export const getSequenceListDataApi = () => {
     const instance = axios.create();
 
     // loadProgressBar({
@@ -9,7 +9,7 @@ export const getPointListDataApi = () => {
     // }, instance);
 
     return instance({
-        url: 'https://my-json-server.typicode.com/jh6120v/scrum-poker/point-list',
+        url: 'https://my-json-server.typicode.com/jh6120v/scrum-poker/sequence',
         method: 'get',
         responseType: 'json',
         headers: {

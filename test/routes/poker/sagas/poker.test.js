@@ -5,7 +5,7 @@ import { throwError } from 'redux-saga-test-plan/providers';
 import { getPointListDataApi } from '../../../../src/routes/poker/sagas/api';
 import { fetchPointListData } from '../../../../src/routes/poker/sagas/poker';
 import { IDBSet } from '../../../../src/modules/indexed-db';
-import { POINT_LIST_DATA } from '../../../../src/constants';
+import { POINT_SEQUENCE_LIST } from '../../../../src/constants';
 import { pointListDataFetch, pointListDataSet } from '../../../../src/routes/poker/modules/point-list';
 import { spinnerHide, spinnerShow } from '../../../../src/modules/spinner';
 
@@ -19,7 +19,7 @@ describe('test poker saga.', () => {
             ])
             .put(spinnerShow())
             .put(IDBSet({
-                key: POINT_LIST_DATA,
+                key: POINT_SEQUENCE_LIST,
                 value: fakeUser
             }))
             .put(pointListDataSet({

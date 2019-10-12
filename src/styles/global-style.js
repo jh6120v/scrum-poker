@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Fredoka One', Baloo;
     font-size: 16px;
     color: #1d1d1f;
-    background-color: #aadff0;
+    background-color: #6cb8cf;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;

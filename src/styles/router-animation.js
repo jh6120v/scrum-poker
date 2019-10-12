@@ -64,7 +64,7 @@ const slideFromBottomBackOut = keyframes`
 const RouterAnimation = styled.div`
   position: relative;
   width: 100vw;
-  height: calc(100vh - 90px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   ${respondTo.xs`
     width: 400px;
   `}
@@ -137,10 +137,10 @@ const RouteAnimateContent = styled.div`
   top: 0;
   left: 0;
   box-shadow: -5px 0 2px -3px rgba(0,0,0,0.15);
-  background-color: #aadff0;
+  //background-color: #aadff0;
   //padding: 10px 20px;
   overflow: auto;
-  display: flex;
+  //display: flex;
 `;
 
 export {

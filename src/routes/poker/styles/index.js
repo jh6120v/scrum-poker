@@ -18,11 +18,17 @@ import cardBg12 from '../../../assets/images/card-bg/card-12.gif';
 import cardBg13 from '../../../assets/images/card-bg/card-13.gif';
 import cofeeCat from '../../../assets/images/coffee-cat.png';
 
+// Poker Wrapper
+const PokerWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #aadff0;
+  padding-top: 50px;
+`;
+
 // flip
 const PokerContainer = styled(FlipCard)`
   //height: calc(100vh - 135px);
-  width: 85%;
-  margin: 0 auto;
   ${respondTo.sm`
     width: 350px;
     margin: 0 auto;
@@ -34,16 +40,16 @@ const PokerListWrap = styled(FlipCardFront)`
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
-  background: #aadff0;
   z-index: 1;
+  padding: 0 20px;
 `;
 
 const PokerSelectWrap = styled(FlipCardBack)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #aadff0;
   z-index: 1;
+  padding: 0 20px;
 `;
 
 // item auto scale. real poker radio
@@ -260,6 +266,7 @@ const CoffeeCat = styled.div`
 `;
 
 export {
+    PokerWrap,
     PokerContainer, PokerListWrap, PokerSelectWrap,
     PokerItemWrap, PokerItemMask, PokerItem, PokerItemInner,
     CloseButton, Setting,
