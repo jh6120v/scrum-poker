@@ -2,9 +2,10 @@ import React, { Suspense } from 'react';
 import { LazyLoad } from '../styles/common-style';
 
 export const personalDefaultSetting = {
-    sequenceType: 'planning-poker',
-    color: '#FFF',
-    keepOnScreen: false,
+    sequenceType: '',
+    pokerNumberColor: '#FFFFFF',
+    selectedNumberColor: '#5AC9E8',
+    keepScreenOn: false,
     autoHideCard: false
 };
 

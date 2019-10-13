@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
 const HeaderStyle = styled.header`
   width: 100%;
-  height: 50px;
+  height: calc(44px + env(safe-area-inset-top));
   position: fixed;
   left: 0;
   top: 0;
@@ -23,8 +23,8 @@ const HeaderStyle = styled.header`
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  margin-top: env(safe-area-inset-top);
-  padding: 0 5px;
+  //margin-top: env(safe-area-inset-top);
+  padding: env(safe-area-inset-top) 5px 0 5px;
   overflow: hidden;
   background-color: #6cb8cf;
   z-index: 3;

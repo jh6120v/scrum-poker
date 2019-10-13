@@ -1,10 +1,19 @@
-import styled, { css } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
+
+const backgroundshow = keyframes`
+  from {
+    background-color: rgba(170,223,240, 1);
+  }
+  to {
+    background-color: rgba(159,209,224, 1);
+  }
+`;
 
 const SettingWrap = styled.div`
   width: 100%;
   height: 100%;
   background-color: #9fd4e5;
-  padding-top: 50px;
+  padding-top: 44px;
 `;
 
 const SettingItem = styled.div`
@@ -16,6 +25,9 @@ const SettingItem = styled.div`
   padding: 10px 15px;
   font-family: Arial, serif;
   font-size: .9rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  flex-wrap: wrap;
   ${(props) => {
         if (props.isTitle) {
             return css`
@@ -37,6 +49,11 @@ const SettingItem = styled.div`
           background-color: #aadff0;
           justify-content: space-between;
           align-items: center;
+          &:active {
+            animation: ${backgroundshow} .1s ease-in;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+          }
         `;
     }}
 `;

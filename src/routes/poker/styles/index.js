@@ -16,14 +16,14 @@ import cardBg10 from '../../../assets/images/card-bg/card-10.gif';
 import cardBg11 from '../../../assets/images/card-bg/card-11.gif';
 import cardBg12 from '../../../assets/images/card-bg/card-12.gif';
 import cardBg13 from '../../../assets/images/card-bg/card-13.gif';
-import cofeeCat from '../../../assets/images/coffee-cat.png';
+import coffeeCat from '../../../assets/images/coffee-cat.png';
 
 // Poker Wrapper
 const PokerWrap = styled.div`
   width: 100%;
   height: 100%;
   background-color: #aadff0;
-  padding-top: 50px;
+  padding-top: 44px;
 `;
 
 // flip
@@ -103,7 +103,7 @@ const PokerItemInner = styled.div`
   width: 90%;
   height: 94%;
   border-radius: 10px;
-  color: #fff;
+  color: ${(props) => props.color ? props.color : '#FFF' };
   background-color: #5bb1d4;
   display: flex;
   justify-content: center;
@@ -147,7 +147,7 @@ const PokerSelectedItemFront = styled(FlipCardFront)`
   border-radius: 25px;
   cursor: pointer;
   font-size: 5rem;
-  color: #5AC9E8;
+  color: ${(props) => (props.color ? props.color : '#5AC9E8')};
   background-color: #fff;
   background-size: contain;
   background-position: bottom;
@@ -260,7 +260,7 @@ const Setting = styled.div`
 const CoffeeCat = styled.div`
   width: ${(props) => (props.width ? props.width : '30%')};
   height: ${(props) => (props.height ? props.height : '20%')};
-  background-image: url(${cofeeCat});
+  background-image: url(${coffeeCat});
   background-repeat: no-repeat;
   background-size: contain;
 `;

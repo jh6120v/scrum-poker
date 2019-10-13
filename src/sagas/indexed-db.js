@@ -5,9 +5,9 @@ export function* indexDBSet({ payload }) {
     try {
         yield call(set, payload.key, payload.value);
 
-        console.log('It worked!');
+        console.log('save to db success.');
     } catch (e) {
-        console.log('It failed!', e);
+        console.log('save to db failed.', e);
     }
 }
 

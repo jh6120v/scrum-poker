@@ -24,7 +24,7 @@ const handlers = {
         isSelect: payload.isSelect,
         selected: payload.selected,
         img: payload.img,
-        itemFlip: true
+        itemFlip: payload.itemFlip
     }),
     [pointSelectedClear.type]: (state) => ({
         ...state,

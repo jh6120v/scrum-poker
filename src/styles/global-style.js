@@ -10,13 +10,14 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100%;
     font-family: 'Fredoka One', Baloo;
+    font-display: optional;
     font-size: 16px;
     color: #1d1d1f;
     background-color: #6cb8cf;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    user-select:none;
+    user-select: none;
   }
   #app {
     display: flex;

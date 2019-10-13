@@ -34,9 +34,13 @@ const Poker = () => {
     const {
         isSelect, selected, img, itemFlip
     } = useSelector((state) => state.pointSelector);
+    const personal = useSelector((state) => state.personal);
 
     useEffect(() => {
         console.log('components did mount.');
+
+        dispatch(headerTitleDefault());
+        dispatch(nextLinkActSetting());
 
         return () => {
             console.log('components will unmount.');
@@ -46,17 +50,13 @@ const Poker = () => {
         };
     }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(headerTitleDefault());
-        dispatch(nextLinkActSetting());
-    }, [dispatch]);
-
-    const select = useCallback((point) => {
+    const select = useCallback((point, autoHideCard) => {
         setFirst(false);
         dispatch(pointSelectedSet({
             isSelect: !isSelect,
             selected: point,
-            img: getRandom(1, 13)
+            img: getRandom(1, 13),
+            itemFlip: autoHideCard
         }));
 
         dispatch(prevLinkActClose());
@@ -66,8 +66,6 @@ const Poker = () => {
     }, [dispatch, isSelect]);
 
     const flip = useCallback(() => dispatch(pointSelectedFlip()), [dispatch]);
-
-    // console.log(isSelect);
 
     const node = useRef();
     const resume = useCallback((e) => {
@@ -94,10 +92,10 @@ const Poker = () => {
                 <PokerListWrap>
                     {
                         listData.map((val) => (
-                            <PokerItemWrap key={val.point} onClick={() => select(val.point)}>
+                            <PokerItemWrap key={val.point} onClick={() => select(val.point, personal.autoHideCard)}>
                                 <PokerItem>
                                     <PokerItemMask active={isSelect} />
-                                    <PokerItemInner>
+                                    <PokerItemInner color={personal.pokerNumberColor}>
                                         {val.point === 'coffee'
                                             ? <CoffeeCat width="80%" height="50%" /> : val.point}
                                     </PokerItemInner>
@@ -110,7 +108,7 @@ const Poker = () => {
                     <PokerSelectSafari ref={node}>
                         <PokerSelectMask active={!isSelect} onClick={flip} />
                         <PokerSelectContainer active={itemFlip} duration={400}>
-                            <PokerSelectedItemFront className={`img-${img}`}>
+                            <PokerSelectedItemFront className={`img-${img}`} color={personal.selectedNumberColor}>
                                 <PokerSelectedItemFrontWrap>
                                     <PokerSelectedItemFrontMask active={itemFlip} />
                                     {selected === 'coffee' ? <CoffeeCat /> : selected}

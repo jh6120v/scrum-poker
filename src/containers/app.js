@@ -2,6 +2,7 @@ import { hot } from 'react-hot-loader/root';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
+import NoSleep from 'nosleep.js';
 import rootSaga from '../sagas';
 import { store, history, sagaMiddleware } from '../store';
 import Routes from '../routes';
@@ -11,24 +12,48 @@ import sequenceListReducer, { sequenceListDataFetch } from '../modules/sequence-
 import personalSettingReducer from '../modules/personal-setting';
 import spinnerReducer from '../modules/spinner';
 import headerTitleReducer from '../modules/header';
+import pointListReducer from '../modules/point-list';
+import dialogReducer from '../modules/dialog';
 import { Container, Wrapper } from '../styles/layout-style';
 import Header from '../components/header';
+import Dialog from '../commons/dialog';
 
 injectReducer(history, store, [
     { key: 'sequence', reducer: sequenceListReducer },
     { key: 'personal', reducer: personalSettingReducer },
+    { key: 'pointList', reducer: pointListReducer },
     { key: 'spinner', reducer: spinnerReducer },
-    { key: 'header', reducer: headerTitleReducer }
+    { key: 'header', reducer: headerTitleReducer },
+    { key: 'dialog', reducer: dialogReducer }
 ]);
 
 const App = () => {
     const dispatch = useDispatch();
     const { isShow } = useSelector((state) => state.spinner);
     const header = useSelector((state) => state.header);
+    const personal = useSelector((state) => state.personal);
+    const dialog = useSelector((state) => state.dialog);
 
     useEffect(() => {
         dispatch(sequenceListDataFetch());
+
+        // 為了讓 :active 生效
+        document.addEventListener('touchstart', () => {
+        }, false);
     }, [dispatch]);
+
+    useEffect(() => {
+        const noSleep = new NoSleep();
+        if (personal.keepScreenOn) {
+            console.log('no sleep enabled');
+            noSleep.enable();
+        }
+
+        return () => {
+            console.log('no sleep disabled');
+            noSleep.disable();
+        };
+    }, [personal.keepScreenOn]);
 
     return (
         <>
@@ -41,6 +66,7 @@ const App = () => {
                     </Container>
                 </Wrapper>
             </ConnectedRouter>
+            <Dialog {...dialog} />
         </>
     );
 };

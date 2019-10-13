@@ -2,7 +2,7 @@ import each from 'jest-each';
 import PointListReducer, {
     pointListDataFetch,
     pointListDataSet
-} from '../../../../src/routes/poker/modules/point-list';
+} from '../../../../src/modules/point-list';
 
 describe('test point list module.', () => {
     each([

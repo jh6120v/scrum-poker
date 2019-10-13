@@ -5,7 +5,7 @@ import { IDBSet } from '../modules/indexed-db';
 import { PERSONAL_SETTING, POINT_SEQUENCE_LIST } from '../constants';
 import { sequenceListDataSet } from '../modules/sequence-list';
 import { spinnerHide, spinnerShow } from '../modules/spinner';
-import { pointListDataSet } from '../routes/poker/modules/point-list';
+import { pointListDataSet } from '../modules/point-list';
 import { personalSettingSet } from '../modules/personal-setting';
 import { personalDefaultSetting } from '../commons/utils';
 
@@ -14,8 +14,6 @@ export function* fetchSequenceListData() {
         yield put(spinnerShow());
 
         const response = yield call(getSequenceListDataApi);
-
-        // console.log(response);
 
         // save to indexedDb
         yield put(IDBSet({
@@ -34,21 +32,21 @@ export function* fetchSequenceListData() {
         // 若沒有設定檔，就用預設值(planning-poker)
         if (typeof setting !== 'undefined') {
             yield put(pointListDataSet({
+                listName: setting.sequenceType,
                 listData: response[setting.sequenceType]
             }));
 
             yield put(personalSettingSet(setting));
         } else {
             yield put(pointListDataSet({
+                listName: 'planning-poker',
                 listData: response['planning-poker']
             }));
 
-            yield put(IDBSet({
-                key: PERSONAL_SETTING,
-                value: personalDefaultSetting
+            yield put(personalSettingSet({
+                ...personalDefaultSetting,
+                sequenceType: 'planning-poker'
             }));
-
-            yield put(personalSettingSet(personalDefaultSetting));
         }
 
         yield put(spinnerHide());

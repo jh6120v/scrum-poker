@@ -6,7 +6,7 @@ import { getPointListDataApi } from '../../../../src/routes/poker/sagas/api';
 import { fetchPointListData } from '../../../../src/routes/poker/sagas/poker';
 import { IDBSet } from '../../../../src/modules/indexed-db';
 import { POINT_SEQUENCE_LIST } from '../../../../src/constants';
-import { pointListDataFetch, pointListDataSet } from '../../../../src/routes/poker/modules/point-list';
+import { pointListDataFetch, pointListDataSet } from '../../../../src/modules/point-list';
 import { spinnerHide, spinnerShow } from '../../../../src/modules/spinner';
 
 describe('test poker saga.', () => {

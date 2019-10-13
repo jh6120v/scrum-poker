@@ -11,9 +11,7 @@ import {
     HeaderStyle, NextLink, PrevLink, Title
 } from '../styles/layout-style';
 
-const Header = (props) => {
-    const { title, prev, next } = props;
-
+const Header = ({ title, prev, next }) => {
     const renderPrev = (prevState) => {
         switch (prevState) {
             case FUNC_GO_BACK:
