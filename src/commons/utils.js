@@ -5,6 +5,21 @@ export const personalDefaultSetting = {
     sequenceType: '',
     pokerNumberColor: '#FFFFFF',
     selectedNumberColor: '#5AC9E8',
+    theme: {
+        cardList: {
+            borderColor: '#FFFFFF',
+            bgColor: '#5bb1d4',
+            fontColor: '#FFFFFF'
+        },
+        cardFront: {
+            bgColor: '#FFFFFF',
+            fontColor: '#5AC9E8'
+        },
+        cardBack: {
+            borderColor: '#FFFFFF',
+            bgColor: '#5bb1d4'
+        }
+    },
     keepScreenOn: false,
     autoHideCard: false
 };

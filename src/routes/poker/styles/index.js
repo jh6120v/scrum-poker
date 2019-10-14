@@ -103,12 +103,11 @@ const PokerItemInner = styled.div`
   width: 90%;
   height: 94%;
   border-radius: 10px;
-  color: ${(props) => props.color ? props.color : '#FFF' };
+  color: ${(props) => (props.color ? props.color : '#FFF')};
   background-color: #5bb1d4;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 1px 1px 2px rgba(29, 29, 31, .7);
   background-image: url(${logo});
   background-repeat: no-repeat;
   background-position: center center;
