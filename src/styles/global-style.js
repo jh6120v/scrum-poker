@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     padding-left: env(safe-area-inset-left);
   }
   html, body {
-    height: 100%;
+    height: auto;
     font-family: 'Fredoka One', Baloo;
     font-display: optional;
     font-size: 16px;
