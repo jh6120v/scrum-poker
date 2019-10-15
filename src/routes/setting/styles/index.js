@@ -28,6 +28,7 @@ const SettingItem = styled.div`
   text-transform: capitalize;
   cursor: pointer;
   flex-wrap: wrap;
+  ${(props) => (props.alignItemsCenter ? css`align-items: center;` : '')}
   ${(props) => {
         if (props.isTitle) {
             return css`
@@ -48,7 +49,6 @@ const SettingItem = styled.div`
         return css`
           background-color: #aadff0;
           justify-content: space-between;
-          align-items: center;
           &:active {
             animation: ${backgroundshow} .1s ease-in;
             animation-iteration-count: 1;

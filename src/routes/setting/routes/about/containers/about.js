@@ -28,7 +28,7 @@ const About = () => {
                 Author: James Yu
                 <br />
                 E-mail:
-                <a href="mailto:jh6120v@msn.com"> jh6120v@msn.com</a>
+                <a href="mailto:jh6120v@msn.com" target="_new"> jh6120v@msn.com</a>
                 <br />
                 Github:
                 <a href="https://github.com/jh6120v/scrum-poker" target="_new"> https://github.com/jh6120v/scrum-poker</a>

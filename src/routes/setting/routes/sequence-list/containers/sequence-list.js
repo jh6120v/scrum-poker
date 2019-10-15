@@ -35,7 +35,7 @@ const SequenceList = () => {
         <SettingWrap>
             {
                 Object.keys(sequenceList).map((val) => (
-                    <SettingItem key={val} onClick={() => changeSequenceType(val)}>
+                    <SettingItem key={val} onClick={() => changeSequenceType(val)} alignItemsCenter>
                         <Sequence>
                             <Name>{val.replace('-', ' ')}</Name>
                             <List>

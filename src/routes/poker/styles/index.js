@@ -73,7 +73,7 @@ const PokerItem = styled.div`
   align-items: center;
   font-size: 1.8rem;
   border-radius: 10px;
-  background: #fff;
+  background-color: ${(props) => (props.borderColor ? props.borderColor : '#ffffff')};
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -103,8 +103,8 @@ const PokerItemInner = styled.div`
   width: 90%;
   height: 94%;
   border-radius: 10px;
-  color: ${(props) => (props.color ? props.color : '#FFF')};
-  background-color: #5bb1d4;
+  color: ${(props) => (props.fontColor ? props.fontColor : '#ffffff')};
+  background-color: ${(props) => (props.bgColor ? props.bgColor : '#5bb1d4')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,8 +146,8 @@ const PokerSelectedItemFront = styled(FlipCardFront)`
   border-radius: 25px;
   cursor: pointer;
   font-size: 5rem;
-  color: ${(props) => (props.color ? props.color : '#5AC9E8')};
-  background-color: #fff;
+  color: ${(props) => (props.fontColor ? props.fontColor : '#5AC9E8')};
+  background-color: ${(props) => (props.bgColor ? props.bgColor : '#ffffff')};
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -215,7 +215,7 @@ const PokerSelectedItemBack = styled(FlipCardBack)`
   border-radius: 25px;
   cursor: pointer;
   transform: rotateY(180deg);
-  background-color: #fff;
+  background-color: ${(props) => (props.borderColor ? props.borderColor : '#ffffff')};
   z-index: 1;
 `;
 

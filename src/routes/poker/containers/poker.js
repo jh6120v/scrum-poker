@@ -34,7 +34,7 @@ const Poker = () => {
     const {
         isSelect, selected, img, itemFlip
     } = useSelector((state) => state.pointSelector);
-    const personal = useSelector((state) => state.personal);
+    const { theme, autoHideCard } = useSelector((state) => state.personal);
 
     useEffect(() => {
         console.log('components did mount.');
@@ -50,13 +50,13 @@ const Poker = () => {
         };
     }, [dispatch]);
 
-    const select = useCallback((point, autoHideCard) => {
+    const select = useCallback((point, isAutoHideCard) => {
         setFirst(false);
         dispatch(pointSelectedSet({
             isSelect: !isSelect,
             selected: point,
             img: getRandom(1, 13),
-            itemFlip: autoHideCard
+            itemFlip: isAutoHideCard
         }));
 
         dispatch(prevLinkActClose());
@@ -92,10 +92,10 @@ const Poker = () => {
                 <PokerListWrap>
                     {
                         listData.map((val) => (
-                            <PokerItemWrap key={val.point} onClick={() => select(val.point, personal.autoHideCard)}>
-                                <PokerItem>
+                            <PokerItemWrap key={val.point} onClick={() => select(val.point, autoHideCard)}>
+                                <PokerItem borderColor={theme.cardList.borderColor}>
                                     <PokerItemMask active={isSelect} />
-                                    <PokerItemInner color={personal.pokerNumberColor}>
+                                    <PokerItemInner fontColor={theme.cardList.fontColor} bgColor={theme.cardList.bgColor}>
                                         {val.point === 'coffee'
                                             ? <CoffeeCat width="80%" height="50%" /> : val.point}
                                     </PokerItemInner>
@@ -108,16 +108,16 @@ const Poker = () => {
                     <PokerSelectSafari ref={node}>
                         <PokerSelectMask active={!isSelect} onClick={flip} />
                         <PokerSelectContainer active={itemFlip} duration={400}>
-                            <PokerSelectedItemFront className={`img-${img}`} color={personal.selectedNumberColor}>
+                            <PokerSelectedItemFront className={`img-${img}`} fontColor={theme.cardFront.fontColor} bgColor={theme.cardFront.bgColor}>
                                 <PokerSelectedItemFrontWrap>
                                     <PokerSelectedItemFrontMask active={itemFlip} />
                                     {selected === 'coffee' ? <CoffeeCat /> : selected}
                                 </PokerSelectedItemFrontWrap>
                             </PokerSelectedItemFront>
-                            <PokerSelectedItemBack>
+                            <PokerSelectedItemBack borderColor={theme.cardBack.borderColor}>
                                 <PokerSelectedItemBackWrap>
                                     <PokerSelectedItemBackMask active={!itemFlip} />
-                                    <PokerSelectedItemBackInner />
+                                    <PokerSelectedItemBackInner bgColor={theme.cardBack.bgColor} />
                                 </PokerSelectedItemBackWrap>
                             </PokerSelectedItemBack>
                         </PokerSelectContainer>

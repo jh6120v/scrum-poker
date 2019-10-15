@@ -59,8 +59,8 @@ const Setting = () => {
                     Sequence Type
                     <IosArrowForward color="#4f6571" />
                 </SettingItem>
-                <SettingItem onClick={() => linkTo('/setting/number-color')}>
-                    Number Color
+                <SettingItem onClick={() => linkTo('/setting/theme')}>
+                    Theme
                     <IosArrowForward color="#4f6571" />
                 </SettingItem>
                 <SettingItem isTitle>GENERAL SETTINGS</SettingItem>

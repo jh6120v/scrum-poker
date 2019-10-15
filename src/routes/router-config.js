@@ -1,11 +1,11 @@
 import { lazy } from 'react';
 import { waitingRouteComponent } from '../commons/utils';
-import NumberColor from './setting/routes/number-color';
+import Theme from './setting/routes/theme';
 
 const Poker = lazy(() => import('./poker'));
 const Setting = lazy(() => import('./setting'));
 const SequenceList = lazy(() => import('./setting/routes/sequence-list'));
-// const NumberColor = lazy(() => import('./setting/routes/number-color'));
+// const Theme = lazy(() => import('./setting/routes/number-color'));
 const About = lazy(() => import('./setting/routes/about'));
 
 const DEFAULT_SCENE_CONFIG = {
@@ -38,8 +38,8 @@ export const RouterConfig = [
         }
     },
     {
-        path: '/setting/number-color',
-        component: NumberColor,
+        path: '/setting/theme',
+        component: Theme,
         exact: true,
         sceneConfig: {
             enter: 'page-right-forward',
