@@ -2,15 +2,22 @@ import styled from 'styled-components';
 import {
     PokerItem,
     PokerItemInner,
-    PokerItemWrap,
-    PokerSelectedItemFront,
-    PokerSelectedItemFrontWrap
+    PokerItemWrap
 } from '../../../../poker/styles';
 import cardBg1 from '../../../../../assets/images/card-bg/card-1.gif';
 import logo2 from '../../../../../assets/images/bugcat-logo-text-bg.png';
 
+const ThemePreview = styled(PokerItemWrap)`
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: ${(props) => (props.selected ? '0 0 5px #8a8a8a' : 'none')};
+`;
 
-const ThemePreview = styled(PokerItemWrap)``;
+const ThemeSettingPicker = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
 
 const ThemePreviewCardListItem = styled(PokerItem)``;
 const ThemePreviewCardListItemInner = styled(PokerItemInner)``;
@@ -63,6 +70,38 @@ const ThemePreviewCardBackInner = styled.div`
   background-size: contain;
 `;
 
+const ThemeSetting = styled.div`
+  display: flex;
+  width: 100%;
+  align-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 15px;
+`;
+
+const ThemeSettingList = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 15px;
+`;
+
+const ThemeSettingItem = styled.div`
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 2px 7px;  
+  margin-right: 7px;
+  background-color: ${(props) => (props.color ? props.color : '#ffffff')};
+  box-shadow: ${(props) => (props.selected ? '0 0 3px #8a8a8a' : 'none')};
+  &:before {
+    content: attr(data-title);
+    mix-blend-mode: difference;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
 const ColorWatch = styled.div`
   padding: 3px;
   background: #fff;
@@ -89,6 +128,10 @@ const ColorPicker = styled.div`
 
 export {
     ThemePreview,
+    ThemeSetting,
+    ThemeSettingList,
+    ThemeSettingItem,
+    ThemeSettingPicker,
     ThemePreviewCardListItem,
     ThemePreviewCardListItemInner,
     ThemePreviewCardFront,
