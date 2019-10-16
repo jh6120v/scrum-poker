@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
     PokerItem,
     PokerItemInner,
@@ -10,7 +10,9 @@ import logo2 from '../../../../../assets/images/bugcat-logo-text-bg.png';
 const ThemePreview = styled(PokerItemWrap)`
   margin: 0;
   border-radius: 10px;
-  box-shadow: ${(props) => (props.selected ? '0 0 5px #8a8a8a' : 'none')};
+  transition: all .3s ease;
+  transform: ${(props) => (props.selected ? 'scale(1.1)' : 'scale(1)')};
+  box-shadow: ${(props) => (props.selected ? '0 0 2px #1d1d1d' : 'none')};
 `;
 
 const ThemeSettingPicker = styled.div`
@@ -90,12 +92,26 @@ const ThemeSettingItem = styled.div`
   display: inline-block;
   border-radius: 5px;
   padding: 2px 7px;  
-  margin-right: 7px;
-  background-color: ${(props) => (props.color ? props.color : '#ffffff')};
-  box-shadow: ${(props) => (props.selected ? '0 0 3px #8a8a8a' : 'none')};
+  margin-right: 10px;
+  transition: transform .3s ease;
+  ${(props) => {
+        if (props.selected) {
+            return css`
+              background-color: #5bb1d4;
+              color: #ffffff;
+              box-shadow: 0 0 3px #ffffff;
+              transform: scale(1.1);
+            `;
+        }
+
+        return css`
+          background-color: #ffffff;
+          color: #5bb1d4;
+          transform: scale(1);
+        `;
+    }};
   &:before {
     content: attr(data-title);
-    mix-blend-mode: difference;
   }
   &:last-child {
     margin-right: 0;

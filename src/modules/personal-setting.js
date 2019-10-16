@@ -42,10 +42,20 @@ const handlers = {
         ...state,
         keepScreenOn: !state.keepScreenOn
     }),
-    [personalNumberColorChange.type]: (state, { payload }) => ({
-        ...state,
-        ...payload
-    })
+    [personalNumberColorChange.type]: (state, { payload: { type, change }}) => {
+        console.log(type, change);
+        console.log(state.theme[type]);
+        return {
+            ...state,
+            theme: {
+                ...state.theme,
+                [type]: {
+                    ...state.theme[type],
+                    ...change
+                }
+            }
+        };
+    }
 };
 
 const reducers = createReducer(initialState, handlers);

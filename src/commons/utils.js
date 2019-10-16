@@ -3,8 +3,6 @@ import { LazyLoad } from '../styles/common-style';
 
 export const personalDefaultSetting = {
     sequenceType: '',
-    pokerNumberColor: '#FFFFFF',
-    selectedNumberColor: '#5AC9E8',
     theme: {
         cardList: {
             borderColor: '#FFFFFF',

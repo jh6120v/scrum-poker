@@ -17,6 +17,7 @@ const Theme = () => {
     const [selected, setSelected] = useState('cardList');
     const [itemSelected, setItemSelected] = useState(null);
     const colorSelectList = ['#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#5AC9E8', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#FFFFFF'];
+    const wordTransferMap = { borderColor: 'Border', bgColor: 'Background', fontColor: 'Font' };
 
     useEffect(() => {
         dispatch(headerTitleSet({
@@ -26,29 +27,38 @@ const Theme = () => {
         dispatch(prevLinkActGoBack());
     }, [dispatch]);
 
-    const toggle = useCallback(() => setDisplayColorPicker((prev) => !prev), []);
-    const toggle2 = useCallback(() => setDisplayColorPicker2((prev) => !prev), []);
+    const selectTheme = useCallback((type) => {
+        setSelected(type);
+        setItemSelected(null);
+    }, []);
 
-    const onChange = useCallback((color, type) => {
-        dispatch(personalNumberColorChange({
-            [type]: color.hex
-        }));
-    }, [dispatch]);
-
-    const itemIsSelect = useCallback((index, name) => {
+    const itemIsSelect = useCallback((index, type) => {
         if (itemSelected === null && index === 0) {
-            setItemSelected(name);
+            setItemSelected(type);
             return true;
         }
 
-        return itemSelected === name;
+        return itemSelected === type;
     }, [itemSelected]);
+
+    const selectThemeItem = useCallback((type) => {
+        setItemSelected(type);
+    }, []);
+
+    const onChangeComplete = useCallback((color, type, item) => {
+        dispatch(personalNumberColorChange({
+            type,
+            change: {
+                [item]: color.hex
+            }
+        }));
+    }, [dispatch]);
 
     return (
         <SettingWrap>
             <SettingItem isTitle>Choose one item</SettingItem>
             <SettingItem justifyContentSpaceAround>
-                <ThemePreview selected={selected === 'cardList'}>
+                <ThemePreview selected={selected === 'cardList'} onClick={() => selectTheme('cardList')}>
                     <ThemePreviewCardListItem borderColor={theme.cardList.borderColor}>
                         <ThemePreviewCardListItemInner
                             bgColor={theme.cardList.bgColor}
@@ -58,7 +68,7 @@ const Theme = () => {
                         </ThemePreviewCardListItemInner>
                     </ThemePreviewCardListItem>
                 </ThemePreview>
-                <ThemePreview selected={selected === 'cardFront'}>
+                <ThemePreview selected={selected === 'cardFront'} onClick={() => selectTheme('cardFront')}>
                     <ThemePreviewCardFront
                         bgColor={theme.cardFront.bgColor}
                         fontColor={theme.cardFront.fontColor}
@@ -66,7 +76,7 @@ const Theme = () => {
                         <ThemePreviewCardFrontInner>99</ThemePreviewCardFrontInner>
                     </ThemePreviewCardFront>
                 </ThemePreview>
-                <ThemePreview selected={selected === 'cardBack'}>
+                <ThemePreview selected={selected === 'cardBack'} onClick={() => selectTheme('cardBack')}>
                     <ThemePreviewCardBack borderColor={theme.cardBack.borderColor}>
                         <ThemePreviewCardBackInner bgColor={theme.cardBack.bgColor} />
                     </ThemePreviewCardBack>
@@ -77,9 +87,9 @@ const Theme = () => {
                             Object.keys(theme[selected]).map((val, idx) => (
                                 <ThemeSettingItem
                                     key={val}
-                                    color={theme[selected][val]}
-                                    data-title={val}
+                                    data-title={wordTransferMap[val]}
                                     selected={itemIsSelect(idx, val)}
+                                    onClick={() => selectThemeItem(val)}
                                 />
                             ))
                         }
@@ -89,7 +99,7 @@ const Theme = () => {
                             triangle="hide"
                             colors={colorSelectList}
                             color={theme[selected][itemSelected]}
-                            onChangeComplete={(color) => onChange(color, selected)}
+                            onChangeComplete={(color) => onChangeComplete(color, selected, itemSelected)}
                         />
                     </ThemeSettingPicker>
                 </ThemeSetting>
