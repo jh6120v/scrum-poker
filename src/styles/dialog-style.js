@@ -21,7 +21,7 @@ const DialogWrap = styled.div`
   display: flex;
   flex-direction: column;
   transform: translateX(-50%) translateY(-50%);
-  border-radius: 1px;
+  border-radius: 5px;
   padding: 20px 15px 15px;
   font-family: Arial, serif;
 `;
@@ -41,11 +41,11 @@ const DialogFooter = styled.div`
 const ConfirmButton = styled.div`
   padding: 10px 15px;
   margin: 0 5px;
-  background-color: #0074D9;
+  background-color: #5AC9E8;
   color: #FFF;
   font-size: .8rem;
   cursor: pointer;
-  border-radius: 1px;
+  border-radius: 2px;
 `;
 
 const CancelButton = styled(ConfirmButton)`

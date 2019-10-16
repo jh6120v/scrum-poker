@@ -48,13 +48,14 @@ const SettingItem = styled.div`
 
         return css`
           background-color: #aadff0;
-          //justify-content: space-between;
           justify-content: ${props.justifyContentSpaceAround ? 'space-around' : 'space-between'};
-          &:active {
-            animation: ${backgroundshow} .1s ease-in;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-          }
+          ${!props.noActive ? css`
+              &:active {
+                animation: ${backgroundshow} .1s ease-in;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+              }
+          ` : ''}
         `;
     }}
 `;

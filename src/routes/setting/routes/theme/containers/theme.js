@@ -57,7 +57,7 @@ const Theme = () => {
     return (
         <SettingWrap>
             <SettingItem isTitle>Choose one item</SettingItem>
-            <SettingItem justifyContentSpaceAround>
+            <SettingItem justifyContentSpaceAround noActive>
                 <ThemePreview selected={selected === 'cardList'} onClick={() => selectTheme('cardList')}>
                     <ThemePreviewCardListItem borderColor={theme.cardList.borderColor}>
                         <ThemePreviewCardListItemInner
@@ -96,6 +96,7 @@ const Theme = () => {
                     </ThemeSettingList>
                     <ThemeSettingPicker>
                         <TwitterPicker
+                            width="100%"
                             triangle="hide"
                             colors={colorSelectList}
                             color={theme[selected][itemSelected]}
