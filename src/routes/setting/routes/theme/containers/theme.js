@@ -78,7 +78,12 @@ const Theme = () => {
                 </ThemePreview>
                 <ThemePreview selected={selected === 'cardBack'} onClick={() => selectTheme('cardBack')}>
                     <ThemePreviewCardBack borderColor={theme.cardBack.borderColor}>
-                        <ThemePreviewCardBackInner bgColor={theme.cardBack.bgColor} />
+                        <ThemePreviewCardBackInner
+                            bgColor={theme.cardBack.bgColor}
+                            fontColor={theme.cardBack.fontColor}
+                        >
+                            Poker
+                        </ThemePreviewCardBackInner>
                     </ThemePreviewCardBack>
                 </ThemePreview>
                 <ThemeSetting>

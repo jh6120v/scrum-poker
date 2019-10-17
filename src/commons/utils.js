@@ -15,7 +15,8 @@ export const personalDefaultSetting = {
         },
         cardBack: {
             borderColor: '#FFFFFF',
-            bgColor: '#5bb1d4'
+            bgColor: '#5bb1d4',
+            fontColor: '#FFFFFF'
         }
     },
     keepScreenOn: false,

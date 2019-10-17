@@ -108,7 +108,11 @@ const Poker = () => {
                     <PokerSelectSafari ref={node}>
                         <PokerSelectMask active={!isSelect} onClick={flip} />
                         <PokerSelectContainer active={itemFlip} duration={400}>
-                            <PokerSelectedItemFront className={`img-${img}`} fontColor={theme.cardFront.fontColor} bgColor={theme.cardFront.bgColor}>
+                            <PokerSelectedItemFront
+                                className={`img-${img}`}
+                                fontColor={theme.cardFront.fontColor}
+                                bgColor={theme.cardFront.bgColor}
+                            >
                                 <PokerSelectedItemFrontWrap>
                                     <PokerSelectedItemFrontMask active={itemFlip} />
                                     {selected === 'coffee' ? <CoffeeCat /> : selected}
@@ -117,7 +121,12 @@ const Poker = () => {
                             <PokerSelectedItemBack borderColor={theme.cardBack.borderColor}>
                                 <PokerSelectedItemBackWrap>
                                     <PokerSelectedItemBackMask active={!itemFlip} />
-                                    <PokerSelectedItemBackInner bgColor={theme.cardBack.bgColor} />
+                                    <PokerSelectedItemBackInner
+                                        bgColor={theme.cardBack.bgColor}
+                                        fontColor={theme.cardBack.fontColor}
+                                    >
+                                        Scrum Poker
+                                    </PokerSelectedItemBackInner>
                                 </PokerSelectedItemBackWrap>
                             </PokerSelectedItemBack>
                         </PokerSelectContainer>

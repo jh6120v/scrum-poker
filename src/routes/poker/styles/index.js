@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import { FlipCard, FlipCardFront, FlipCardBack } from './flip-card';
 import { respondTo } from '../../../styles/_mixin';
-import logo from '../../../assets/images/bugcat-logo-bg.png';
-import logo2 from '../../../assets/images/bugcat-logo-text-bg.png';
+import logo from '../../../assets/images/capoo-cat-logo.png';
+import logoBg from '../../../assets/images/capoo-cat-logo-bg.png';
 import cardBg1 from '../../../assets/images/card-bg/card-1.gif';
 import cardBg2 from '../../../assets/images/card-bg/card-2.gif';
 import cardBg3 from '../../../assets/images/card-bg/card-3.gif';
@@ -106,12 +106,14 @@ const PokerItemInner = styled.div`
   color: ${(props) => (props.fontColor ? props.fontColor : '#ffffff')};
   background-color: ${(props) => (props.bgColor ? props.bgColor : '#5bb1d4')};
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(${logo});
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-image: url(${logoBg});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  padding: 0 5px 5px 0;
+  font-size: 1.5rem;
 `;
 
 const PokerSelectSafari = styled.div`
@@ -230,8 +232,14 @@ const PokerSelectedItemBackMask = styled(PokerItemMask)`
 `;
 
 const PokerSelectedItemBackInner = styled(PokerItemInner)`
-  background-image: url(${logo2});
+  background-repeat: no-repeat;
+  background-image: url(${logo});
   background-size: contain;
+  background-position: center 40%;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 45% 0 0 0;
 `;
 
 const CloseButton = styled.div`

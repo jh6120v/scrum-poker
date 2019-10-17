@@ -5,14 +5,13 @@ import {
     PokerItemWrap
 } from '../../../../poker/styles';
 import cardBg1 from '../../../../../assets/images/card-bg/card-1.gif';
-import logo2 from '../../../../../assets/images/bugcat-logo-text-bg.png';
+import logo from '../../../../../assets/images/capoo-cat-logo.png';
 
 const ThemePreview = styled(PokerItemWrap)`
   //margin: 0;
   border-radius: 10px;
   transition: all .3s ease;
   transform: ${(props) => (props.selected ? 'scale(1.1)' : 'scale(1)')};
-  // box-shadow: ${(props) => (props.selected ? '0 0 2px #1d1d1d' : 'none')};
 `;
 
 const ThemeSettingPicker = styled.div`
@@ -67,9 +66,11 @@ const ThemePreviewCardBackInner = styled.div`
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
-  background-position: center center;
-  background-image: url(${logo2});
+  background-position: center 40%;
+  background-image: url(${logo});
   background-size: contain;
+  padding-top: 45%;
+  font-size: .2rem;
 `;
 
 const ThemeSetting = styled.div`

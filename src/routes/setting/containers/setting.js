@@ -13,7 +13,7 @@ import {
 import { useModel } from '../../../commons/hooks';
 import {
     ConfirmButton, ModelContent, ModelFooter, ModelShadow, ModelWrap
-} from '../../../styles/dialog-style';
+} from '../../../styles/model-style';
 import Model from '../../../containers/model';
 
 const Setting = () => {
