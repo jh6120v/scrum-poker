@@ -70,7 +70,6 @@ const ThemePreviewCardBackInner = styled.div`
   background-image: url(${logo});
   background-size: contain;
   padding-top: 45%;
-  font-size: .2rem;
 `;
 
 const ThemeSetting = styled.div`
