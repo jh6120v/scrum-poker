@@ -8,11 +8,11 @@ import cardBg1 from '../../../../../assets/images/card-bg/card-1.gif';
 import logo2 from '../../../../../assets/images/bugcat-logo-text-bg.png';
 
 const ThemePreview = styled(PokerItemWrap)`
-  margin: 0;
+  //margin: 0;
   border-radius: 10px;
   transition: all .3s ease;
   transform: ${(props) => (props.selected ? 'scale(1.1)' : 'scale(1)')};
-  box-shadow: ${(props) => (props.selected ? '0 0 2px #1d1d1d' : 'none')};
+  // box-shadow: ${(props) => (props.selected ? '0 0 2px #1d1d1d' : 'none')};
 `;
 
 const ThemeSettingPicker = styled.div`
@@ -99,7 +99,7 @@ const ThemeSettingItem = styled.div`
             return css`
               background-color: #5bb1d4;
               color: #ffffff;
-              box-shadow: 0 0 3px #ffffff;
+              //box-shadow: 0 0 3px #ffffff;
               transform: scale(1.1);
             `;
         }

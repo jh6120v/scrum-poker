@@ -17,7 +17,7 @@ const Theme = () => {
     const [selected, setSelected] = useState('cardList');
     const [itemSelected, setItemSelected] = useState(null);
     const colorSelectList = ['#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#5AC9E8', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#FFFFFF'];
-    const wordTransferMap = { borderColor: 'Border', bgColor: 'Background', fontColor: 'Font' };
+    const wordTransferMap = { borderColor: 'Border', bgColor: 'Background', fontColor: 'Text' };
 
     useEffect(() => {
         dispatch(headerTitleSet({
@@ -56,7 +56,7 @@ const Theme = () => {
 
     return (
         <SettingWrap>
-            <SettingItem isTitle>Choose one item</SettingItem>
+            <SettingItem isTitle>SELECT & CHANGE</SettingItem>
             <SettingItem justifyContentSpaceAround noActive>
                 <ThemePreview selected={selected === 'cardList'} onClick={() => selectTheme('cardList')}>
                     <ThemePreviewCardListItem borderColor={theme.cardList.borderColor}>

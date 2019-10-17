@@ -10,11 +10,16 @@ import {
     personalKeepScreenOnChange,
     personalSettingReset
 } from '../../../modules/personal-setting';
-import { dialogClose, dialogOpen } from '../../../modules/dialog';
+import { useModel } from '../../../commons/hooks';
+import {
+    ConfirmButton, ModelContent, ModelFooter, ModelShadow, ModelWrap
+} from '../../../styles/dialog-style';
+import Model from '../../../containers/model';
 
 const Setting = () => {
     const dispatch = useDispatch();
     const personal = useSelector((state) => state.personal);
+    const { isShow } = useSelector((state) => state.model);
 
     useEffect(() => {
         dispatch(headerTitleSet({
@@ -40,16 +45,11 @@ const Setting = () => {
         }
     }, []);
 
-    const toReset = useCallback(() => {
-        dispatch(dialogOpen({
-            message: 'Are you sure to reset?',
-            onCancel: () => dispatch(dialogClose()),
-            onConfirm: () => {
-                dispatch(personalSettingReset());
-                dispatch(dialogClose());
-            }
-        }));
-    }, [dispatch]);
+    const { showModal, hideModal } = useModel();
+    const onConfirm = useCallback(() => {
+        hideModal();
+        dispatch(personalSettingReset());
+    }, [dispatch, hideModal]);
 
     return (
         <>
@@ -73,7 +73,7 @@ const Setting = () => {
                     {personal.autoHideCard ? <MdCheckmark color="#4f6571" /> : null}
                 </SettingItem>
                 <SettingItem isSpace />
-                <SettingItem onClick={toReset}>Reset</SettingItem>
+                <SettingItem onClick={showModal}>Reset</SettingItem>
                 <SettingItem onClick={share}>Share</SettingItem>
                 <SettingItem onClick={() => linkTo('/setting/about')}>
                     About
@@ -81,6 +81,15 @@ const Setting = () => {
                 </SettingItem>
                 <Version>Version 0.2.0</Version>
             </SettingWrap>
+            <Model isShow={isShow}>
+                <ModelShadow onClick={hideModal} />
+                <ModelWrap>
+                    <ModelContent>Are you sure to reset?</ModelContent>
+                    <ModelFooter>
+                        <ConfirmButton onClick={onConfirm}>Confirm</ConfirmButton>
+                    </ModelFooter>
+                </ModelWrap>
+            </Model>
         </>
     );
 };

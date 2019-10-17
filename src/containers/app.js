@@ -13,10 +13,9 @@ import personalSettingReducer from '../modules/personal-setting';
 import spinnerReducer from '../modules/spinner';
 import headerTitleReducer from '../modules/header';
 import pointListReducer from '../modules/point-list';
-import dialogReducer from '../modules/dialog';
+import modelReducer from '../modules/model';
 import { Container, Wrapper } from '../styles/layout-style';
 import Header from '../components/header';
-import Dialog from '../commons/dialog';
 
 injectReducer(history, store, [
     { key: 'sequence', reducer: sequenceListReducer },
@@ -24,7 +23,7 @@ injectReducer(history, store, [
     { key: 'pointList', reducer: pointListReducer },
     { key: 'spinner', reducer: spinnerReducer },
     { key: 'header', reducer: headerTitleReducer },
-    { key: 'dialog', reducer: dialogReducer }
+    { key: 'model', reducer: modelReducer }
 ]);
 
 const App = () => {
@@ -32,12 +31,11 @@ const App = () => {
     const { isShow } = useSelector((state) => state.spinner);
     const header = useSelector((state) => state.header);
     const personal = useSelector((state) => state.personal);
-    const dialog = useSelector((state) => state.dialog);
 
     useEffect(() => {
         dispatch(sequenceListDataFetch());
 
-        // 為了讓 :active 生效
+        // 為了讓 :active 在 ios 生效
         document.addEventListener('touchstart', () => {
         }, false);
     }, [dispatch]);
@@ -66,7 +64,6 @@ const App = () => {
                     </Container>
                 </Wrapper>
             </ConnectedRouter>
-            <Dialog {...dialog} />
         </>
     );
 };

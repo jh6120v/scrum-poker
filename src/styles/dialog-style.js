@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const DialogShadow = styled.div`
+const ModelShadow = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -10,7 +10,7 @@ const DialogShadow = styled.div`
   z-index: 10;
 `;
 
-const DialogWrap = styled.div`
+const ModelWrap = styled.div`
   position: fixed;
   left: 50%;
   top: 50%;
@@ -26,12 +26,12 @@ const DialogWrap = styled.div`
   font-family: Arial, serif;
 `;
 
-const DialogContent = styled.div`
+const ModelContent = styled.div`
   width: 100%;
   padding: 0 0 20px 0;
 `;
 
-const DialogFooter = styled.div`
+const ModelFooter = styled.div`
   width: 100%;
   padding: 0 10px;
   display: flex;
@@ -54,10 +54,10 @@ const CancelButton = styled(ConfirmButton)`
 `;
 
 export {
-    DialogShadow,
-    DialogWrap,
-    DialogContent,
-    DialogFooter,
+    ModelShadow,
+    ModelWrap,
+    ModelContent,
+    ModelFooter,
     ConfirmButton,
     CancelButton
 };
