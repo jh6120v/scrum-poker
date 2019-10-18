@@ -41,7 +41,8 @@ describe('test PointSelector module.', () => {
             {
                 isSelect: true,
                 selected: '5',
-                img: 3
+                img: 3,
+                itemFlip: true
             },
             pointSelectedSet,
             {

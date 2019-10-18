@@ -65,6 +65,7 @@ exports[`test common-style style. test <LazyLoad /> snapshot. 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #FFF;
+  background-color: #aadff0;
 }
 
 <div

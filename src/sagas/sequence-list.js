@@ -2,12 +2,11 @@ import { call, put } from 'redux-saga/effects';
 import { get } from 'idb-keyval';
 import { getSequenceListDataApi } from './api';
 import { IDBSet } from '../modules/indexed-db';
-import { PERSONAL_SETTING, POINT_SEQUENCE_LIST } from '../constants';
+import { PERSONAL_DEFAULT_SETTING, PERSONAL_SETTING, POINT_SEQUENCE_LIST } from '../constants';
 import { sequenceListDataSet } from '../modules/sequence-list';
 import { spinnerHide, spinnerShow } from '../modules/spinner';
 import { pointListDataSet } from '../modules/point-list';
 import { personalSettingSet } from '../modules/personal-setting';
-import { personalDefaultSetting } from '../commons/utils';
 
 export function* fetchSequenceListData() {
     try {
@@ -44,7 +43,7 @@ export function* fetchSequenceListData() {
             }));
 
             yield put(personalSettingSet({
-                ...personalDefaultSetting,
+                ...PERSONAL_DEFAULT_SETTING,
                 sequenceType: 'planning-poker'
             }));
         }

@@ -1,28 +1,6 @@
 import React, { Suspense } from 'react';
 import { LazyLoad } from '../styles/common-style';
 
-export const personalDefaultSetting = {
-    sequenceType: '',
-    theme: {
-        cardList: {
-            borderColor: '#FFFFFF',
-            bgColor: '#5bb1d4',
-            fontColor: '#FFFFFF'
-        },
-        cardFront: {
-            bgColor: '#FFFFFF',
-            fontColor: '#5AC9E8'
-        },
-        cardBack: {
-            borderColor: '#FFFFFF',
-            bgColor: '#5bb1d4',
-            fontColor: '#FFFFFF'
-        }
-    },
-    keepScreenOn: false,
-    autoHideCard: false
-};
-
 export const createActionCreator = (namespace) => (actionType) => {
     const type = `${namespace}/${actionType}`;
     const actionCreator = (payload = {}) => ({

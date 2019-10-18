@@ -7,7 +7,7 @@ export function* indexDBSet({ payload }) {
 
         console.log('save to db success.');
     } catch (e) {
-        console.log('save to db failed.', e);
+        console.log('save to db failed.');
     }
 }
 

@@ -1,8 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 import { get } from 'idb-keyval';
 import { IDBSet } from '../modules/indexed-db';
-import { PERSONAL_SETTING, POINT_SEQUENCE_LIST } from '../constants';
-import { personalDefaultSetting } from '../commons/utils';
+import { PERSONAL_DEFAULT_SETTING, PERSONAL_SETTING, POINT_SEQUENCE_LIST } from '../constants';
 import { pointListDataSet } from '../modules/point-list';
 
 export function* setPersonalSetting({ payload }) {
@@ -19,7 +18,7 @@ export function* setPersonalSetting({ payload }) {
 export function* resetPersonalSetting() {
     try {
         const defaultSetting = yield {
-            ...personalDefaultSetting,
+            ...PERSONAL_DEFAULT_SETTING,
             sequenceType: 'planning-poker'
         };
 

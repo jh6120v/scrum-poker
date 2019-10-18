@@ -3,7 +3,7 @@
 exports[`test utils rendered lazily fallback 1`] = `
 <div>
   <div
-    class="sc-bxivhb jiTLSq"
+    class="sc-bxivhb ghNLQl"
   >
     Loading...
   </div>
