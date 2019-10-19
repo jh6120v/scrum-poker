@@ -29,18 +29,14 @@ describe('test indexed-db saga.', () => {
             .run();
     });
 
-    it('delete data from indexDB.', () => {
+    it('del data from indexDB.', () => {
         const fakePayload = {
-            payload: [
-                'AAA',
-                'BBB'
-            ]
+            payload: 'AAA'
         };
 
         return expectSaga(indexDBDel, fakePayload)
             .provide([
-                [call(del, fakePayload.payload[0])],
-                [call(del, fakePayload.payload[1])]
+                [call(del, fakePayload.payload)],
             ])
             .dispatch(IDBDelete)
             .run();
