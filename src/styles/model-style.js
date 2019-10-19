@@ -48,16 +48,10 @@ const ConfirmButton = styled.div`
   border-radius: 2px;
 `;
 
-const CancelButton = styled(ConfirmButton)`
-  background-color: #cccccc;
-  color: #999;
-`;
-
 export {
     ModelShadow,
     ModelWrap,
     ModelContent,
     ModelFooter,
-    ConfirmButton,
-    CancelButton
+    ConfirmButton
 };

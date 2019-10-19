@@ -12,7 +12,5 @@ export function* indexDBSet({ payload }) {
 }
 
 export function* indexDBDel({ payload }) {
-    for (const val of payload.values()) {
-        yield call(del, val);
-    }
+    yield call(del, payload);
 }

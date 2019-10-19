@@ -11,15 +11,11 @@ import {
     personalSettingReset
 } from '../../../modules/personal-setting';
 import { useModel } from '../../../commons/hooks';
-import {
-    ConfirmButton, ModelContent, ModelFooter, ModelShadow, ModelWrap
-} from '../../../styles/model-style';
-import Model from '../../../containers/model';
+import Model from '../../../components/model';
 
 const Setting = () => {
     const dispatch = useDispatch();
     const personal = useSelector((state) => state.personal);
-    const { isShow } = useSelector((state) => state.model);
 
     useEffect(() => {
         dispatch(headerTitleSet({
@@ -45,11 +41,12 @@ const Setting = () => {
         }
     }, []);
 
-    const { showModal, hideModal } = useModel();
-    const onConfirm = useCallback(() => {
+    const {
+        ModelBox, isShown, showModal, hideModal
+    } = useModel('Are you sure to reset?', useCallback(() => {
         hideModal();
         dispatch(personalSettingReset());
-    }, [dispatch, hideModal]);
+    }, [dispatch]));
 
     return (
         <>
@@ -81,14 +78,8 @@ const Setting = () => {
                 </SettingItem>
                 <Version>Version 0.2.0</Version>
             </SettingWrap>
-            <Model isShow={isShow}>
-                <ModelShadow onClick={hideModal} />
-                <ModelWrap>
-                    <ModelContent>Are you sure to reset?</ModelContent>
-                    <ModelFooter>
-                        <ConfirmButton onClick={onConfirm}>Confirm</ConfirmButton>
-                    </ModelFooter>
-                </ModelWrap>
+            <Model isShow={isShown}>
+                <ModelBox />
             </Model>
         </>
     );

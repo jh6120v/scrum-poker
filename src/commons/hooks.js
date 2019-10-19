@@ -1,22 +1,28 @@
-import { useState, useCallback, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { modelHide, modelShow } from '../modules/model';
+import React, { useState, useCallback } from 'react';
+import {
+    ConfirmButton, ModelContent, ModelFooter, ModelShadow, ModelWrap
+} from '../styles/model-style';
 
-const useModel = () => {
-    const dispatch = useDispatch();
+const useModel = (message, confirm) => {
     const [isShown, setShown] = useState(false);
     const showModal = useCallback(() => setShown(true), []);
     const hideModal = useCallback(() => setShown(false), []);
 
-    useEffect(() => {
-        if (isShown) {
-            dispatch(modelShow());
-        } else {
-            dispatch(modelHide());
-        }
-    }, [dispatch, isShown]);
+    const ModelBox = () => (
+        <div>
+            <ModelWrap>
+                <ModelContent>{message}</ModelContent>
+                <ModelFooter>
+                    <ConfirmButton onClick={confirm}>Confirm</ConfirmButton>
+                </ModelFooter>
+            </ModelWrap>
+            <ModelShadow onClick={hideModal} />
+        </div>
+    );
 
     return {
+        ModelBox,
+        isShown,
         showModal,
         hideModal
     };

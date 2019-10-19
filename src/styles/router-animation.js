@@ -137,10 +137,7 @@ const RouteAnimateContent = styled.div`
   top: 0;
   left: 0;
   box-shadow: -5px 0 2px -3px rgba(0,0,0,0.15);
-  //background-color: #aadff0;
-  //padding: 10px 20px;
   overflow: auto;
-  //display: flex;
 `;
 
 export {

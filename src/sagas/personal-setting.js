@@ -10,6 +10,7 @@ export function* setPersonalSetting({ payload }) {
             key: PERSONAL_SETTING,
             value: payload
         }));
+        console.log('test');
     } catch (e) {
         console.log(e);
     }

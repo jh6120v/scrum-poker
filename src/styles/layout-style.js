@@ -46,10 +46,7 @@ const PrevLink = styled.div`
  height: 25px;
 `;
 
-const NextLink = styled.div`
-  min-width: 25px;
-  height: 25px;
-`;
+const NextLink = styled(PrevLink)``;
 
 const Container = styled.div`
   width: 100%;
@@ -59,23 +56,11 @@ const Container = styled.div`
   flex-basis: auto;
 `;
 
-const Footer = styled.footer`
-  width: 100%;
-  height: 40px;
-  overflow: hidden;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 0 calc(5px + env(safe-area-inset-bottom)) 0;
-  background-color: #aadff0;
-  color: #fff;
-  font-size: 16px;
-  z-index: 3;
-`;
-
 export {
-    Wrapper, HeaderStyle, Title, PrevLink, NextLink, Container, Footer
+    Wrapper,
+    HeaderStyle,
+    Title,
+    PrevLink,
+    NextLink,
+    Container
 };
