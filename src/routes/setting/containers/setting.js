@@ -76,7 +76,7 @@ const Setting = () => {
                     About
                     <IosArrowForward color="#4f6571" />
                 </SettingItem>
-                <Version>Version 0.2.0</Version>
+                <Version>Version 1.0.0</Version>
             </SettingWrap>
             <Model isShow={isShown}>
                 <ModelBox />
