@@ -103,6 +103,7 @@
     "collectCoverageFrom": [
       "src/styles/*.js",
       "src/commons/*.js",
+      "src/components/*.js",
       "src/modules/*.js",
       "src/sagas/*.js",
       "!src/assets/*.*"
