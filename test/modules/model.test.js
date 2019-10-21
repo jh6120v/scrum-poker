@@ -1,39 +1,39 @@
 import each from 'jest-each';
-import spinnerReducer, { spinnerShow, spinnerHide } from '../../src/modules/spinner';
+import modelReducer, { modelHide, modelShow } from '../../src/modules/model';
 
-describe('test spinner module.', () => {
+describe('test model modules.', () => {
     each([
         [
-            'spinnerShow',
-            spinnerShow,
+            'modelShow',
+            modelShow,
             {
-                type: '@@SPINNER/SPINNER_SHOW',
+                type: '@@MODEL/MODEL_SHOW',
                 payload: {}
             }
         ],
         [
-            'spinnerHide',
-            spinnerHide,
+            'modelHide',
+            modelHide,
             {
-                type: '@@SPINNER/SPINNER_HIDE',
+                type: '@@MODEL/MODEL_HIDE',
                 payload: {}
             }
-        ]
-    ]).it('should dispatch %s action to show/hide spinner.', (name, actionCreator, expected) => {
+        ],
+    ]).it('should dispatch %s action to change model.', (name, actionCreator, expected) => {
         expect(actionCreator()).toEqual(expected);
     });
 
     each([
         [
-            'spinnerShow',
-            spinnerShow,
+            'modelShow',
+            modelShow,
             {
                 isShow: true
             }
         ],
         [
-            'spinnerHide',
-            spinnerHide,
+            'modelHide',
+            modelHide,
             {
                 isShow: false
             }
@@ -44,7 +44,7 @@ describe('test spinner module.', () => {
                 isShow: false
             };
 
-            const result = spinnerReducer(state, actionCreator());
+            const result = modelReducer(state, actionCreator());
 
             expect(result).toEqual(expected);
         });

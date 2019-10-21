@@ -27,7 +27,7 @@ describe('test indexed db action creator', () => {
                 payload: {}
             }
         ]
-    ]).it('should dispatch %s action to get data from indexed db', (name, func, expected) => {
-        expect(func({})).toEqual(expected);
+    ]).it('should dispatch %s action to get data from indexed db', (name, actionCreator, expected) => {
+        expect(actionCreator({})).toEqual(expected);
     });
 });

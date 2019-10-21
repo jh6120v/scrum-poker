@@ -2,9 +2,9 @@ import { createActionCreator } from '../commons/utils';
 import { createReducer } from '../store/reducers';
 
 // Actions
-const actionCreator = createActionCreator('@@POKER/SEQUENCE_LIST');
-const sequenceListDataFetch = actionCreator('DATA_FETCH');
-const sequenceListDataSet = actionCreator('DATA_SET');
+const actionCreator = createActionCreator('@@SEQUENCE_LIST');
+const sequenceListDataFetch = actionCreator('LIST_DATA_FETCH');
+const sequenceListDataSet = actionCreator('LIST_DATA_SET');
 
 export { sequenceListDataFetch, sequenceListDataSet };
 

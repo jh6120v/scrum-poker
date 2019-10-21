@@ -3,7 +3,7 @@ import { createReducer } from '../store/reducers';
 import { PERSONAL_DEFAULT_SETTING } from '../constants';
 
 // Actions
-const actionCreator = createActionCreator('@@POKER/PERSONAL_SETTING');
+const actionCreator = createActionCreator('@@PERSONAL_SETTING');
 const personalSettingSet = actionCreator('SETTING_SET');
 const personalSettingReset = actionCreator('SETTING_RESET');
 const personalSequenceTypeChange = actionCreator('SEQUENCE_TYPE_CHANGE');
@@ -43,18 +43,16 @@ const handlers = {
         ...state,
         keepScreenOn: !state.keepScreenOn
     }),
-    [personalNumberColorChange.type]: (state, { payload: { type, change } }) => {
-        return {
-            ...state,
-            theme: {
-                ...state.theme,
-                [type]: {
-                    ...state.theme[type],
-                    ...change
-                }
+    [personalNumberColorChange.type]: (state, { payload: { type, change } }) => ({
+        ...state,
+        theme: {
+            ...state.theme,
+            [type]: {
+                ...state.theme[type],
+                ...change
             }
-        };
-    }
+        }
+    })
 };
 
 const reducers = createReducer(initialState, handlers);

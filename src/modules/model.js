@@ -2,9 +2,9 @@ import { createActionCreator } from '../commons/utils';
 import { createReducer } from '../store/reducers';
 
 // Actions
-const actionCreator = createActionCreator('@@POKER/MODEL');
-const modelShow = actionCreator('SHOW');
-const modelHide = actionCreator('HIDE');
+const actionCreator = createActionCreator('@@MODEL');
+const modelShow = actionCreator('MODEL_SHOW');
+const modelHide = actionCreator('MODEL_HIDE');
 
 export { modelShow, modelHide };
 

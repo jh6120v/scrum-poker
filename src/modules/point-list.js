@@ -2,8 +2,8 @@ import { createActionCreator } from '../commons/utils';
 import { createReducer } from '../store/reducers';
 
 // Actions
-const actionCreator = createActionCreator('@@POKER/POINT_LIST');
-const pointListDataSet = actionCreator('DATA_SET');
+const actionCreator = createActionCreator('@@POINT_LIST');
+const pointListDataSet = actionCreator('LIST_DATA_SET');
 
 export { pointListDataSet };
 
