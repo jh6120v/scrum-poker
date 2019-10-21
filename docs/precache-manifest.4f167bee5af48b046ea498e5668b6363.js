@@ -1,9 +1,5 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4398045f852e2c0660f6afc454163da3",
-    "url": "/CNAME"
-  },
-  {
     "revision": "b9073acd1fc44241c3fd26795886162f",
     "url": "/assets/icons/android-chrome-192x192.png"
   },
@@ -80,25 +76,25 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/images/i.f3c6ae9ec58cc794230fa6f48b6a65e4.gif"
   },
   {
-    "url": "/assets/js/0.bundle.304ebf8aff758a8fea1a.js"
+    "url": "/assets/js/0.bundle.6fd60bb3df124556a252.js"
   },
   {
-    "url": "/assets/js/2.bundle.304ebf8aff758a8fea1a.js"
+    "url": "/assets/js/2.bundle.6fd60bb3df124556a252.js"
   },
   {
-    "url": "/assets/js/3.bundle.304ebf8aff758a8fea1a.js"
+    "url": "/assets/js/3.bundle.6fd60bb3df124556a252.js"
   },
   {
-    "url": "/assets/js/4.bundle.304ebf8aff758a8fea1a.js"
+    "url": "/assets/js/4.bundle.6fd60bb3df124556a252.js"
   },
   {
-    "url": "/assets/js/5.bundle.304ebf8aff758a8fea1a.js"
+    "url": "/assets/js/5.bundle.6fd60bb3df124556a252.js"
   },
   {
-    "url": "/assets/js/6.bundle.304ebf8aff758a8fea1a.js"
+    "url": "/assets/js/6.bundle.6fd60bb3df124556a252.js"
   },
   {
-    "url": "/assets/js/bundle.304ebf8aff758a8fea1a.js"
+    "url": "/assets/js/bundle.6fd60bb3df124556a252.js"
   },
   {
     "revision": "8b3220a35c0182ef0de213a9b35a6068",
@@ -141,7 +137,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/favicon.ico"
   },
   {
-    "revision": "0e8782230f7350ca737541a844a883ec",
+    "revision": "33693f7d9923cb630d0d94c00ccec057",
     "url": "/index.html"
   },
   {
