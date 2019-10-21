@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test header component. test <Header /> snapshot. 1`] = `
+<header
+  class="sc-jKJlTe qbGsk"
+  data-testid="display_header"
+>
+  <div
+    class="sc-hMqMXs fFHOfr"
+  />
+  <div
+    class="sc-eNQAEJ emEcHI"
+  />
+  <div
+    class="sc-hMqMXs sc-kEYyzF ekJvCj"
+  />
+</header>
+`;
