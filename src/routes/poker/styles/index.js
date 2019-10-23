@@ -28,7 +28,6 @@ const PokerWrap = styled.div`
 
 // flip
 const PokerContainer = styled(FlipCard)`
-  //height: calc(100vh - 135px);
   ${respondTo.sm`
     width: 350px;
     margin: 0 auto;
@@ -59,7 +58,7 @@ const PokerItemWrap = styled.div`
   max-width: 22%;
   margin: 6.5px 0;
   &::after {
-    content: "";
+    content: '';
     display: block;
     padding-bottom: 140%; // 高度
   }

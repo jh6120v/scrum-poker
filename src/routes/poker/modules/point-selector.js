@@ -2,7 +2,7 @@ import { createActionCreator } from '../../../commons/utils';
 import { createReducer } from '../../../store/reducers';
 
 // Actions
-const actionCreator = createActionCreator('@@POKER/POINT_SELECTOR');
+const actionCreator = createActionCreator('@@POINT_SELECTOR');
 const pointSelectedSet = actionCreator('POINT_SELECTED_SET');
 const pointSelectedClear = actionCreator('POINT_SELECTED_CLEAR');
 const pointSelectedFlip = actionCreator('POINT_SELECTED_FLIP');

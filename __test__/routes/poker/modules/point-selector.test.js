@@ -11,7 +11,7 @@ describe('test PointSelector module.', () => {
             'pointSelectedSet',
             pointSelectedSet,
             {
-                type: '@@POKER/POINT_SELECTOR/POINT_SELECTED_SET',
+                type: '@@POINT_SELECTOR/POINT_SELECTED_SET',
                 payload: {}
             }
         ],
@@ -19,7 +19,7 @@ describe('test PointSelector module.', () => {
             'pointSelectedClear',
             pointSelectedClear,
             {
-                type: '@@POKER/POINT_SELECTOR/POINT_SELECTED_CLEAR',
+                type: '@@POINT_SELECTOR/POINT_SELECTED_CLEAR',
                 payload: {}
             }
         ],
@@ -27,7 +27,7 @@ describe('test PointSelector module.', () => {
             'pointSelectedFlip',
             pointSelectedFlip,
             {
-                type: '@@POKER/POINT_SELECTOR/POINT_SELECTED_FLIP',
+                type: '@@POINT_SELECTOR/POINT_SELECTED_FLIP',
                 payload: {}
             }
         ]

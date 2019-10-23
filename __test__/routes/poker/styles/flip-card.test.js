@@ -23,6 +23,20 @@ describe('test flip-card style.', () => {
         expect(tree).toHaveStyleRule('z-index', '1');
     });
 
+    it('test <FlipCard /> animation when render with first=false, active=false.', () => {
+        const { container } = render(<FlipCard width="100px" height="100px" duration={300} active={false} first={false} />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('animation', 'iEMDfD');
+    });
+
+    it('test <FlipCard /> animation when render with first=false, active=true.', () => {
+        const { container } = render(<FlipCard width="100px" height="100px" duration={300} active first={false} />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('animation', 'yBWqA');
+    });
+
     it('test <FlipCardFront /> snapshot.', () => {
         const { container } = render(<FlipCardFront />);
         expect(container.firstChild).toMatchSnapshot();
