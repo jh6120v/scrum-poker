@@ -393,6 +393,51 @@ exports[`test Poker style. test <PokerSelectedItemFront /> snapshot. 1`] = `
 />
 `;
 
+exports[`test Poker style. test <PokerSelectedItemFrontMask /> snapshot. 1`] = `
+.c0 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  z-index: 0;
+  background: rgba(0,0,0,0);
+  z-index: 0;
+  border-radius: 25px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test Poker style. test <PokerSelectedItemFrontWrap /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding-top: 17%;
+}
+
+<div
+  class="c0"
+/>
+`;
+
 exports[`test Poker style. test <PokerWrap /> snapshot. 1`] = `
 .c0 {
   width: 100%;

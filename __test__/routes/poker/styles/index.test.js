@@ -2,9 +2,17 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import {
-    PokerContainer, PokerItem, PokerItemInner, PokerItemMask,
+    PokerContainer,
+    PokerItem,
+    PokerItemInner,
+    PokerItemMask,
     PokerItemWrap,
-    PokerListWrap, PokerSelectContainer, PokerSelectedItemFront, PokerSelectMask, PokerSelectSafari,
+    PokerListWrap,
+    PokerSelectContainer,
+    PokerSelectedItemFront, PokerSelectedItemFrontMask,
+    PokerSelectedItemFrontWrap,
+    PokerSelectMask,
+    PokerSelectSafari,
     PokerSelectWrap,
     PokerWrap
 } from '../../../../src/routes/poker/styles';
@@ -273,6 +281,77 @@ describe('test Poker style.', () => {
         expect(tree).toHaveStyleRule('background-position', 'bottom');
         expect(tree).toHaveStyleRule('background-repeat', 'no-repeat');
         expect(tree).toHaveStyleRule('z-index', '1');
+        expect(tree).toHaveStyleRule('background-image', 'url(card-1.gif)', {
+            modifier: '&.img-1'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-2.gif)', {
+            modifier: '&.img-2'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-3.gif)', {
+            modifier: '&.img-3'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-4.gif)', {
+            modifier: '&.img-4'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-5.gif)', {
+            modifier: '&.img-5'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-6.gif)', {
+            modifier: '&.img-6'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-7.gif)', {
+            modifier: '&.img-7'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-8.gif)', {
+            modifier: '&.img-8'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-9.gif)', {
+            modifier: '&.img-9'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-10.gif)', {
+            modifier: '&.img-10'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-11.gif)', {
+            modifier: '&.img-11'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-12.gif)', {
+            modifier: '&.img-12'
+        });
+        expect(tree).toHaveStyleRule('background-image', 'url(card-13.gif)', {
+            modifier: '&.img-13'
+        });
+    });
 
+    it('test <PokerSelectedItemFrontWrap /> snapshot.', () => {
+        const { container } = render(<PokerSelectedItemFrontWrap />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <PokerSelectedItemFrontWrap /> when render it.', () => {
+        const { container } = render(<PokerSelectedItemFrontWrap />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('width', '100%');
+        expect(tree).toHaveStyleRule('height', '100%');
+        expect(tree).toHaveStyleRule('position', 'relative');
+        expect(tree).toHaveStyleRule('display', 'flex');
+        expect(tree).toHaveStyleRule('justify-content', 'center');
+        expect(tree).toHaveStyleRule('align-items', 'flex-start');
+        expect(tree).toHaveStyleRule('padding-top', '17%');
+    });
+
+    it('test <PokerSelectedItemFrontMask /> snapshot.', () => {
+        const { container } = render(<PokerSelectedItemFrontMask />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <PokerSelectedItemFrontMask /> when render it.', () => {
+        const { container } = render(<PokerSelectedItemFrontMask />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('z-index', '0');
+        expect(tree).toHaveStyleRule('border-radius', '25px');
     });
 });
