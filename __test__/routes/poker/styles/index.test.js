@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import {
+    CloseButton, CoffeeCat,
     PokerContainer,
     PokerItem,
     PokerItemInner,
@@ -9,12 +10,17 @@ import {
     PokerItemWrap,
     PokerListWrap,
     PokerSelectContainer,
-    PokerSelectedItemFront, PokerSelectedItemFrontMask,
+    PokerSelectedItemBack,
+    PokerSelectedItemBackInner,
+    PokerSelectedItemBackMask,
+    PokerSelectedItemBackWrap,
+    PokerSelectedItemFront,
+    PokerSelectedItemFrontMask,
     PokerSelectedItemFrontWrap,
     PokerSelectMask,
     PokerSelectSafari,
     PokerSelectWrap,
-    PokerWrap
+    PokerWrap, Setting
 } from '../../../../src/routes/poker/styles';
 
 describe('test Poker style.', () => {
@@ -322,6 +328,14 @@ describe('test Poker style.', () => {
         });
     });
 
+    it('test <PokerSelectedItemFront /> when render with another props.', () => {
+        const { container } = render(<PokerSelectedItemFront fontColor="#000" bgColor="#000" />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('color', '#000');
+        expect(tree).toHaveStyleRule('background-color', '#000');
+    });
+
     it('test <PokerSelectedItemFrontWrap /> snapshot.', () => {
         const { container } = render(<PokerSelectedItemFrontWrap />);
 
@@ -353,5 +367,151 @@ describe('test Poker style.', () => {
 
         expect(tree).toHaveStyleRule('z-index', '0');
         expect(tree).toHaveStyleRule('border-radius', '25px');
+    });
+
+    it('test <PokerSelectedItemBack /> snapshot.', () => {
+        const { container } = render(<PokerSelectedItemBack />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <PokerSelectedItemBack /> when render with default props.', () => {
+        const { container } = render(<PokerSelectedItemBack />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('display', 'flex');
+        expect(tree).toHaveStyleRule('justify-content', 'center');
+        expect(tree).toHaveStyleRule('align-items', 'center');
+        expect(tree).toHaveStyleRule('border-radius', '25px');
+        expect(tree).toHaveStyleRule('cursor', 'pointer');
+        expect(tree).toHaveStyleRule('transform', 'rotateY(180deg)');
+        expect(tree).toHaveStyleRule('background-color', '#ffffff');
+        expect(tree).toHaveStyleRule('z-index', '1');
+    });
+
+    it('test <PokerSelectedItemBack /> when render with another prpos.', () => {
+        const { container } = render(<PokerSelectedItemBack borderColor="#000" />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('background-color', '#000');
+    });
+
+    it('test <PokerSelectedItemBackWrap /> snapshot.', () => {
+        const { container } = render(<PokerSelectedItemBackWrap />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <PokerSelectedItemBackWrap /> when render it.', () => {
+        const { container } = render(<PokerSelectedItemBackWrap />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('align-items', 'center');
+        expect(tree).toHaveStyleRule('padding-top', '0');
+    });
+
+    it('test <PokerSelectedItemBackMask /> snapshot.', () => {
+        const { container } = render(<PokerSelectedItemBackMask />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <PokerSelectedItemBackMask /> when render it.', () => {
+        const { container } = render(<PokerSelectedItemBackMask />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('z-index', '2');
+        expect(tree).toHaveStyleRule('border-radius', '25px');
+    });
+
+    it('test <PokerSelectedItemBackInner /> snapshot.', () => {
+        const { container } = render(<PokerSelectedItemBackInner />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <PokerSelectedItemBackInner /> when render it.', () => {
+        const { container } = render(<PokerSelectedItemBackInner />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('background-repeat', 'no-repeat');
+        expect(tree).toHaveStyleRule('background-image', 'url(capoo-cat-logo.png)');
+        expect(tree).toHaveStyleRule('background-size', 'contain');
+        expect(tree).toHaveStyleRule('background-position', 'center 40%');
+        expect(tree).toHaveStyleRule('font-size', '2rem');
+        expect(tree).toHaveStyleRule('justify-content', 'center');
+        expect(tree).toHaveStyleRule('align-items', 'center');
+        expect(tree).toHaveStyleRule('padding', '45% 0 0 0');
+    });
+
+    it('test <CloseButton /> snapshot.', () => {
+        const { container } = render(<CloseButton />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <CloseButton /> when render it.', () => {
+        const { container } = render(<CloseButton />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('z-index', '3');
+        expect(tree).toHaveStyleRule('color', '#fff');
+        expect(tree).toHaveStyleRule('font-size', '25px');
+        expect(tree).toHaveStyleRule('font-family', '\'Orbitron\',sans-serif');
+        expect(tree).toHaveStyleRule('cursor', 'pointer');
+        expect(tree).toHaveStyleRule('transition', 'all 0.2s ease-in');
+        expect(tree).toHaveStyleRule('padding-left', '3px');
+    });
+
+    it('test <Setting /> snapshot.', () => {
+        const { container } = render(<Setting />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <Setting /> when render it..', () => {
+        const { container } = render(<Setting />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('z-index', '3');
+        expect(tree).toHaveStyleRule('transition', 'all 0.2s ease-in');
+        expect(tree).toHaveStyleRule('padding-right', '3px');
+        expect(tree).toHaveStyleRule('color', '#fff', {
+            modifier: 'a'
+        });
+        expect(tree).toHaveStyleRule('font-size', '1.2rem', {
+            modifier: 'a'
+        });
+        expect(tree).toHaveStyleRule('font-family', '\'Orbitron\',sans-serif', {
+            modifier: 'a'
+        });
+        expect(tree).toHaveStyleRule('cursor', 'pointer', {
+            modifier: 'a'
+        });
+    });
+
+    it('test <CoffeeCat /> snapshot.', () => {
+        const { container } = render(<CoffeeCat />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('test <CoffeeCat /> when render with default props.', () => {
+        const { container } = render(<CoffeeCat />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('width', '30%');
+        expect(tree).toHaveStyleRule('height', '20%');
+        expect(tree).toHaveStyleRule('background-image', 'url(coffee-cat.png)');
+        expect(tree).toHaveStyleRule('background-repeat', 'no-repeat');
+        expect(tree).toHaveStyleRule('background-size', 'contain');
+    });
+
+    it('test <CoffeeCat /> when render with another props.', () => {
+        const { container } = render(<CoffeeCat width="50%" height="50%" />);
+        const tree = container.firstChild;
+
+        expect(tree).toHaveStyleRule('width', '50%');
+        expect(tree).toHaveStyleRule('height', '50%');
     });
 });

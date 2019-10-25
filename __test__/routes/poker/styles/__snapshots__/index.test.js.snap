@@ -1,5 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test Poker style. test <CloseButton /> snapshot. 1`] = `
+.c0 {
+  z-index: 3;
+  color: #fff;
+  font-size: 25px;
+  font-family: 'Orbitron',sans-serif;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  padding-left: 3px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test Poker style. test <CoffeeCat /> snapshot. 1`] = `
+.c0 {
+  width: 30%;
+  height: 20%;
+  background-image: url(coffee-cat.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+<div
+  class="c0"
+/>
+`;
+
 exports[`test Poker style. test <PokerContainer /> snapshot. 1`] = `
 .c0 {
   width: 100%;
@@ -162,40 +193,6 @@ exports[`test Poker style. test <PokerListWrap /> snapshot. 1`] = `
 />
 `;
 
-exports[`test Poker style. test <PokerSelectContainer /> 1`] = `
-.c0 {
-  width: 100%;
-  height: 100%;
-  -webkit-animation: iEMDfD;
-  animation: iEMDfD;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  position: relative;
-  z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: auto;
-}
-
-.c0:after {
-  content: "";
-  display: block;
-  padding-bottom: 154%;
-}
-
-<div
-  class="c0"
-/>
-`;
-
 exports[`test Poker style. test <PokerSelectContainer /> snapshot. 1`] = `
 .c0 {
   width: 100%;
@@ -301,6 +298,140 @@ exports[`test Poker style. test <PokerSelectWrap /> snapshot. 1`] = `
   align-items: center;
   z-index: 1;
   padding: 0 20px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test Poker style. test <PokerSelectedItemBack /> snapshot. 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 25px;
+  cursor: pointer;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test Poker style. test <PokerSelectedItemBackInner /> snapshot. 1`] = `
+.c0 {
+  width: 90%;
+  height: 94%;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #5bb1d4;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  background-image: url(capoo-cat-logo-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 0 5px 5px 0;
+  font-size: 1.5rem;
+  background-repeat: no-repeat;
+  background-image: url(capoo-cat-logo.png);
+  background-size: contain;
+  background-position: center 40%;
+  font-size: 2rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 45% 0 0 0;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test Poker style. test <PokerSelectedItemBackMask /> snapshot. 1`] = `
+.c0 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  z-index: 0;
+  background: rgba(0,0,0,0);
+  z-index: 2;
+  border-radius: 25px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test Poker style. test <PokerSelectedItemBackWrap /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding-top: 17%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 0;
 }
 
 <div
@@ -444,6 +575,26 @@ exports[`test Poker style. test <PokerWrap /> snapshot. 1`] = `
   height: 100%;
   background-color: #aadff0;
   padding-top: 44px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test Poker style. test <Setting /> snapshot. 1`] = `
+.c0 {
+  z-index: 3;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  padding-right: 3px;
+}
+
+.c0 a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: 'Orbitron',sans-serif;
+  cursor: pointer;
 }
 
 <div

@@ -109,6 +109,8 @@
       "src/sagas/*.js",
       "src/routes/poker/modules/*.js",
       "src/routes/poker/styles/*.js",
+      "src/routes/setting/styles/*.js",
+      "src/routes/setting/routes/about/styles/*.js",
       "!src/assets/*.*"
     ]
   }
