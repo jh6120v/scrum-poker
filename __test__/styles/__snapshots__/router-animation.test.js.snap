@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test router-animation style. test <RouteAnimateContent /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: -5px 0 2px -3px rgba(0,0,0,0.15);
+  overflow: auto;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test router-animation style. test <RouterAnimation /> snapshot 1`] = `
+.c0 {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+}
+
+.c0 .page-fade-in-enter {
+  -webkit-animation: eMLfYp .3s;
+  animation: eMLfYp .3s;
+}
+
+.c0 .page-fade-in-enter,
+.c0 .page-fade-in-enter-done {
+  z-index: 2;
+}
+
+.c0 .page-fade-in-exit {
+  z-index: 1;
+}
+
+.c0 .page-fade-out-enter,
+.c0 .page-fade-out-enter-done {
+  z-index: 1;
+}
+
+.c0 .page-fade-out-exit {
+  z-index: 2;
+  -webkit-animation: hSsjZP .3s;
+  animation: hSsjZP .3s;
+}
+
+.c0 .page-right-forward-enter {
+  -webkit-animation: hEZKxB .3s forwards;
+  animation: hEZKxB .3s forwards;
+}
+
+.c0 .page-right-forward-enter,
+.c0 .page-right-forward-enter-done {
+  z-index: 2;
+}
+
+.c0 .page-right-forward-exit {
+  z-index: 1;
+}
+
+.c0 .page-right-back-enter,
+.c0 .page-right-back-enter-done {
+  z-index: 1;
+}
+
+.c0 .page-right-back-exit {
+  z-index: 2;
+  -webkit-animation: jPoDAE .3s forwards;
+  animation: jPoDAE .3s forwards;
+}
+
+.c0 .page-bottom-forward-enter {
+  -webkit-animation: bqfpha .3s forwards;
+  animation: bqfpha .3s forwards;
+}
+
+.c0 .page-bottom-forward-enter,
+.c0 .page-bottom-forward-enter-done {
+  z-index: 2;
+}
+
+.c0 .page-bottom-forward-exit {
+  z-index: 1;
+}
+
+.c0 .page-bottom-back-enter,
+.c0 .page-bottom-back-enter-done {
+  z-index: 1;
+}
+
+.c0 .page-bottom-back-exit {
+  z-index: 2;
+  -webkit-animation: iDfTdY .3s forwards;
+  animation: iDfTdY .3s forwards;
+}
+
+@media (min-width:480px) {
+  .c0 {
+    width: 400px;
+  }
+}
+
+<div
+  class="c0"
+/>
+`;

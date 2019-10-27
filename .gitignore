@@ -3,3 +3,8 @@
 node_modules
 coverage
 stats.json
+functions
+.firebaserc
+database.rules.json
+firebase.json
+.firebase

@@ -5,14 +5,12 @@ export function* indexDBSet({ payload }) {
     try {
         yield call(set, payload.key, payload.value);
 
-        console.log('It worked!');
+        console.log('save to db success.');
     } catch (e) {
-        console.log('It failed!', e);
+        console.log('save to db failed.');
     }
 }
 
 export function* indexDBDel({ payload }) {
-    for (const val of payload.values()) {
-        yield call(del, val);
-    }
+    yield call(del, payload);
 }

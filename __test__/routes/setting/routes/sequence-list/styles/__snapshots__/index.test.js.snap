@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test sequence-list styles. test <List /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  font-size: .7rem;
+  line-height: .8rem;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test sequence-list styles. test <Sequence /> snapshot. 1`] = `
+.c0 {
+  width: 70%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+/>
+`;

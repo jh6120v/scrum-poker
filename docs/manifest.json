@@ -1,12 +1,12 @@
 {
   "short_name": "Scrum Poker",
   "name": "Scrum Poker",
-  "description": "咖波敏捷撲克牌",
+  "description": "咖波評估撲克牌",
   "scope": ".",
   "start_url": "/?utm_source=web_app_manifest",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#5bb1d4",
+  "theme_color": "#6cb8cf",
   "background_color": "#5bb1d4",
   "icons": [
     {

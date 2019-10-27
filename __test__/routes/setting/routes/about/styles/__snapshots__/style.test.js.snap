@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test about style. test <AboutContent /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  padding: 20px;
+  font-family: Arial,serif;
+  font-size: .8rem;
+  line-height: 1.2rem;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test about style. test <AppName /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+<h1
+  class="c0"
+/>
+`;

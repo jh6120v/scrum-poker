@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test custom hooks test useModel hooks 1`] = `
+<div>
+  <div
+    class="sc-bwzfXH bWiNQO"
+  >
+    <div
+      class="sc-htpNat IudBq"
+    >
+      test
+    </div>
+    <div
+      class="sc-bxivhb ijgeFW"
+    >
+      <div
+        class="sc-ifAKCX bSPprp"
+      >
+        Confirm
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-bdVaJa fYNSRK"
+  />
+</div>
+`;
