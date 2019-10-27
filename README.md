@@ -61,7 +61,7 @@ https://scrum-poker.dailyofjames.com/
     share website link to anywhere             
     
 ## Version
-2019/10/20: V1.0.0    
+2019/10/27: v1.0.0    
 
 ## LICENSE
 Image copyright is [Capoo](https://www.facebook.com/capoocat/)
