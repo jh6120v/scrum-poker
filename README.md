@@ -1,4 +1,9 @@
-## Scrum Poker PWA
+# Scrum Poker PWA
+
+## Notice
+ - 1.0.0 is now released, it is recommended to reinstall the PWA App for best use experience
+
+## Preview
 ![image](cover_1.gif) ![image](cover_2.gif)
 
 ## Description
