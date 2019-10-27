@@ -1,4 +1,45 @@
 {
+  "point-list": [
+    {
+      "point": "0"
+    },
+    {
+      "point": "1/2"
+    },
+    {
+      "point": "1"
+    },
+    {
+      "point": "2"
+    },
+    {
+      "point": "3"
+    },
+    {
+      "point": "5"
+    },
+    {
+      "point": "8"
+    },
+    {
+      "point": "13"
+    },
+    {
+      "point": "20"
+    },
+    {
+      "point": "40"
+    },
+    {
+      "point": "100"
+    },
+    {
+      "point": "?"
+    },
+    {
+      "point": "coffee"
+    }
+  ],
   "sequence": {
     "planning-poker": [
       {
