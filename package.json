@@ -111,6 +111,8 @@
       "src/routes/poker/styles/*.js",
       "src/routes/setting/styles/*.js",
       "src/routes/setting/routes/about/styles/*.js",
+      "src/routes/setting/routes/sequence-list/styles/*.js",
+      "src/routes/setting/routes/theme/styles/*.js",
       "!src/assets/*.*"
     ]
   }

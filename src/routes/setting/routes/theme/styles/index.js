@@ -8,7 +8,6 @@ import cardBg1 from '../../../../../assets/images/card-bg/card-1.gif';
 import logo from '../../../../../assets/images/capoo-cat-logo.png';
 
 const ThemePreview = styled(PokerItemWrap)`
-  //margin: 0;
   border-radius: 10px;
   transition: all .3s ease;
   transform: ${(props) => (props.selected ? 'scale(1.1)' : 'scale(1)')};
@@ -99,7 +98,6 @@ const ThemeSettingItem = styled.div`
             return css`
               background-color: #5bb1d4;
               color: #ffffff;
-              //box-shadow: 0 0 3px #ffffff;
               transform: scale(1.1);
             `;
         }
@@ -118,30 +116,6 @@ const ThemeSettingItem = styled.div`
   }
 `;
 
-const ColorWatch = styled.div`
-  padding: 3px;
-  background: #fff;
-  border-radius: 1px;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.1);
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-`;
-
-const ColorWatchShow = styled.div`
-  width: 30px;
-  height: 15px;
-  border-radius: 2px;
-  background-color: ${(props) => (props.color ? props.color : '#FFF')};
-`;
-
-const ColorPicker = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 15px;
-`;
-
 export {
     ThemePreview,
     ThemeSetting,
@@ -153,8 +127,5 @@ export {
     ThemePreviewCardFront,
     ThemePreviewCardFrontInner,
     ThemePreviewCardBack,
-    ThemePreviewCardBackInner,
-    ColorWatch,
-    ColorWatchShow,
-    ColorPicker
+    ThemePreviewCardBackInner
 };

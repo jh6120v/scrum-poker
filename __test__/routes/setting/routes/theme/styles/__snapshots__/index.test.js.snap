@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test theme styles. test <ThemePreview /> snapshot. 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  max-width: 22%;
+  margin: 6.5px 0;
+  border-radius: 10px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0::after {
+  content: '';
+  display: block;
+  padding-bottom: 140%;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test theme styles. test <ThemePreviewCardBack /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test theme styles. test <ThemePreviewCardBackInner /> snapshot. 1`] = `
+.c0 {
+  width: 90%;
+  height: 94%;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #5bb1d4;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  background-image: url(capoo-cat-logo.png);
+  background-size: contain;
+  padding-top: 45%;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test theme styles. test <ThemePreviewCardFront /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #5AC9E8;
+  background-color: #ffffff;
+  background-image: url(card-1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test theme styles. test <ThemePreviewCardFrontInner /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding-top: 17%;
+  font-size: 1.2rem;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test theme styles. test <ThemeSetting /> snapshot. 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: space-around;
+  align-content: space-around;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test theme styles. test <ThemeSettingItem /> snapshot. 1`] = `
+.c0 {
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 2px 7px;
+  margin-right: 10px;
+  -webkit-transition: -webkit-transform .3s ease;
+  -webkit-transition: transform .3s ease;
+  transition: transform .3s ease;
+  background-color: #ffffff;
+  color: #5bb1d4;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0:before {
+  content: attr(data-title);
+}
+
+.c0:last-child {
+  margin-right: 0;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test theme styles. test <ThemeSettingList /> snapshot. 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`test theme styles. test <ThemeSettingPicker /> snapshot. 1`] = `
+.c0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  class="c0"
+/>
+`;
