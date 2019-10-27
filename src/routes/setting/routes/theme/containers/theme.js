@@ -89,7 +89,7 @@ const Theme = () => {
                 <ThemeSetting>
                     <ThemeSettingList>
                         {
-                            Object.keys(theme[selected]).map((val, idx) => (
+                            Object.keys(theme[selected]).sort().map((val, idx) => (
                                 <ThemeSettingItem
                                     key={val}
                                     data-title={wordTransferMap[val]}

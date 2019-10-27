@@ -95,7 +95,13 @@ export function* changePersonalNumberColor({ payload }) {
             key: PERSONAL_SETTING,
             value: {
                 ...personal,
-                ...payload
+                theme: {
+                    ...personal.theme,
+                    [payload.type]: {
+                        ...personal.theme[payload.type],
+                        ...payload.change
+                    }
+                }
             }
         }));
     } catch (e) {

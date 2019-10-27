@@ -188,7 +188,7 @@ describe('test personal-setting saga.', () => {
 
     it('success to change personal number color.', () => {
         const fakePayload = { payload: {} };
-        const fakePersonal = { payload: {} };
+        const fakePersonal = { theme: {} };
 
         return expectSaga(changePersonalNumberColor, fakePayload)
             .provide([
@@ -198,7 +198,13 @@ describe('test personal-setting saga.', () => {
                 key: PERSONAL_SETTING,
                 value: {
                     ...fakePersonal,
-                    ...fakePayload.payload
+                    theme: {
+                        ...fakePersonal.theme,
+                        [fakePayload.type]: {
+                            ...fakePersonal.theme[fakePayload.type],
+                            ...fakePayload.change
+                        }
+                    }
                 }
             }))
             .dispatch(personalNumberColorChange)
