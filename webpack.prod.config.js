@@ -3,6 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const SwRegisterWebpackPlugin = require('sw-register-webpack-plugin');
 const config = require('./webpack.base.config.js');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = merge(config, {
     optimization: {
@@ -24,6 +25,10 @@ module.exports = merge(config, {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [`${__dirname}/dist`],
+            verbose: true,
+        }),
         new WorkboxPlugin.GenerateSW({
             swDest: `service-worker.js?${Date.now()}`, // 輸出 Service worker 文件,
             cacheId: 'scrum-poker-pwa', // 設置前綴
