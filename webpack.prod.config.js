@@ -2,8 +2,8 @@ const merge = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const SwRegisterWebpackPlugin = require('sw-register-webpack-plugin');
-const config = require('./webpack.base.config.js');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const config = require('./webpack.base.config.js');
 
 module.exports = merge(config, {
     optimization: {
@@ -35,10 +35,6 @@ module.exports = merge(config, {
             skipWaiting: true, // 強制等待中的 Service Worker 被激活
             clientsClaim: true, // Service Worker 被激活後使其立即獲得頁面控制權
             cleanupOutdatedCaches: true, // 尝试删除老版本缓存
-            // （预加载）忽略某些文件
-            exclude: [
-                /CNAME/,
-            ],
             runtimeCaching: [
                 {
                     urlPattern: /^https:\/\/my-json-server.typicode\.com\//,
