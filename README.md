@@ -10,6 +10,7 @@
 A Scrum Poker PWA consisting of the mysterious creature capoo, when you are evaluating the user story point, he can provide you with a unique deck that will give you a different surprise every time you estimate your card.
 
 ## Website
+![image](qrcode.png)
  - https://scrum-poker-73088.firebaseapp.com/
  - https://scrum-poker.dailyofjames.com/
 
