@@ -9,7 +9,7 @@ module.exports = merge(config, {
     },
     // devServer 則是 webpack-dev-server 設定
     devServer: {
-        host: '127.0.0.1',
+        host: 'localhost',
         inline: true,
         port: 8009,
         open: true
