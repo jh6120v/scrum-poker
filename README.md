@@ -12,7 +12,6 @@ A Scrum Poker PWA consisting of the mysterious creature capoo, when you are eval
 ## Website
 ![image](qrcode.png)
  - https://scrum-poker-73088.firebaseapp.com/
- - https://scrum-poker.dailyofjames.com/
 
 ## how to install PWA on IOS
 1. Open Safari on your iPhone.
