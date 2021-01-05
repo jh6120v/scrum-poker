@@ -19,7 +19,7 @@
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
     "@hot-loader/react-dom": "^16.11.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "axios-progress-bar": "^1.2.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-remove-properties": "^0.3.0",
